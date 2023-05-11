@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText":"登录",
+  "disableScroll":true,
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "navbar": "../../components/navbar/index",
+    "van-tabbar": "vant-weapp/tabbar/index",
+  "van-tabbar-item": "vant-weapp/tabbar-item/index",
+  "van-nav-bar": "vant-weapp/nav-bar/index",
+  "van-icon": "vant-weapp/icon/index"
+  }
+}

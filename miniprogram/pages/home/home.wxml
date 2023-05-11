@@ -1,0 +1,61 @@
+<!-- <van-nav-bar
+  title="标题"
+  left-text="返回"
+  placeholder="{{false}}"
+  border="{{false}}"
+  bind:click-left="onClickLeft"
+  bind:click-right="onClickRight"
+/> -->
+<view class="flex-page">
+  <view class="flex-page-nav">
+    <navbar page-name="见山舍" show-nav="{{true}}" pageType="1" opacity="{{1}}" bgColor="rgba(188,201,231,{{navbarOpacity}})"></navbar>
+    <view>
+ 
+     
+    </view>
+  </view>
+  <view class="flex-page-content">
+    <!-- <view style="height: 100rpx;">
+      <button bindtap="getRoom">查询{{navbarOpacity}}</button>
+    </view> -->
+    <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: 100%;background-color: rgb(241, 241, 241);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
+      <view>
+      <swiper style="height: 75vw;" indicator-dots="{{true}}" autoplay="{{false}}" interval="{{4500}}" duration="{{500}}">
+        <block wx:for="{{images}}" wx:key="*this">
+          <swiper-item >
+           <view> 
+            <image  style="width: 100vw;height: 75vw;" mode="aspectFill"  src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/jss{{index+1}}.jpg" /></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="jss-panal">
+      <view  class="label-title">莫干山见山舍民宿</view>
+      <view class="label-content">
+        <view>免费停车</view><view>网红打卡</view><view>情侣出行</view><view>精品民宿</view>
+        <view>卡拉ok</view><view>草地烧烤</view>
+      </view>
+      <view class="ad">
+        <view class="adone"><van-icon name="location" color="green"  size="40rpx" style="margin: 0rpx 10rpx -8rpx 0;"/>
+        <view>浙江省湖州市德清县莫干山镇北湖村上下庄一号</view>
+        </view>
+        <!-- <van-icon name="wechat" color="green"  size="140rpx"/>
+        <van-icon name="wechat-pay"  color="green"  size="140rpx"/> -->
+       </view>
+    </view>
+  
+       <view class="jss-panal">
+        <view  class="label-title">民宿介绍</view>
+        <view>见山舍民宿位于，，，，，，</view>
+       </view>
+    </scroll-view>
+  </view>
+  <view class="flex-page-bottom" style="height: 150rpx;">
+    <van-tabbar active="{{ active }}" safe-area-inset-bottom="{{true}}" bind:change="onChange" fixed="{{false}}" border="{{false}}">
+      <van-tabbar-item icon="home-o">门店介绍</van-tabbar-item>
+      <van-tabbar-item icon="search">客户预定</van-tabbar-item>
+      <van-tabbar-item icon="friends-o">我的</van-tabbar-item>
+    </van-tabbar>
+  </view>
+
+</view>

@@ -1,0 +1,22 @@
+<!--components/navbar/index.wxml-->
+<view style="background-color: {{bottomBgColor}}">
+  <view class="navbar custom-class" style='height:{{navHeight}}px;background-color:{{bgColor}};position:{{position}};'>
+  <view  wx:if="{{pageType==2}}" class="navbar-action-wrap navbar-action-group row item-center" style='top:{{navTop}}px;' bindtap="_navBack">
+      <!-- <ss-icon name="back" color="{{iconColor}}" size="15px" block="{{true}}" class="navbar-action_item" ></ss-icon> -->
+      <image style="width:48rpx;height:44rpx;margin-left: 8rpx;" src="/static/images/nav-back-arr-black.png"></image>
+  </view>
+  <view wx:if="{{pageType==1}}" class="navbar-action-wrap navbar-action-group row item-center" style='top:{{navTop}}px;border:0;border-radius: 0;left: 40rpx;padding:0'>
+    <image src="/static/images/icon-homemine.png" style="width: 32px;height: 32px;" bindtap="_toMine"></image>
+  </view>
+  <view wx:if="{{pageType==0}}" class="navbar-action-wrap navbar-action-group row item-center" style='top:{{navTop}}px;'>
+       <ss-icon name="index" color="{{iconColor}}" size="15px" block="{{true}}" class="navbar-action_item last" bind:click="_toIndex"></ss-icon>
+  </view>
+  <view class='navbar-title' style='top:{{navTop}}px'>
+    {{pageName}}
+  </view>
+</view>
+</view>
+
+<!-- <view style="height: 200px;background-color: red;">
+
+</view> -->
