@@ -46,7 +46,7 @@
   
        <view class="jss-panal">
         <view  class="label-title">民宿介绍</view>
-        <view>见山舍民宿位于，，，，，，</view>
+        <view>见山舍民宿位于，，，，，，1111</view>
        </view>
     </scroll-view>
   </view>
