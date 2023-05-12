@@ -38,9 +38,15 @@
   border-radius: 40rpx;
   flex: 1;
 }
-
+.rec{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .rec .rec-item{
   display: flex;
+  width: 100%;
+  margin-bottom: 15rpx;
 }
 .rec .rec-item-lab{
   width: 30%;
@@ -48,4 +54,17 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.rec-item-list{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.rec-item-list .rec-item-list-item{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
