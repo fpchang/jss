@@ -5,6 +5,7 @@
   padding:25rpx 40rpx;
 }
 .label-title{
+  margin-bottom: 10px;
   font-size: 40rpx;
   font-weight: bolder;
   color:rgb(177, 90, 31);
@@ -36,4 +37,15 @@
   background-color: rgb(241, 241, 241);
   border-radius: 40rpx;
   flex: 1;
+}
+
+.rec .rec-item{
+  display: flex;
+}
+.rec .rec-item-lab{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

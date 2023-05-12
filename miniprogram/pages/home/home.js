@@ -1,5 +1,6 @@
 // pages/home/home.js
 const computedBehavior = require("miniprogram-computed").behavior;
+const createRecycleContext = require('miniprogram-recycle-view')
 let app =getApp();
 Page({
   behaviors: [computedBehavior],
@@ -23,7 +24,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    
+  
   },
 
   /**
