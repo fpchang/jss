@@ -1,6 +1,8 @@
 // pages/home/home.js
+import DBconnection from '../../api/DB';
 const computedBehavior = require("miniprogram-computed").behavior;
-const createRecycleContext = require('miniprogram-recycle-view')
+const createRecycleContext = require('miniprogram-recycle-view');
+//const DBconnection = new DB();
 let app =getApp();
 Page({
   behaviors: [computedBehavior],
@@ -17,7 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getRoom();
   },
 
   /**
@@ -87,9 +89,13 @@ Page({
       },
   
   },
-  getRoom(){
-    wx.cloud.database().collection("room").get().then(res=>{
-      console.log(res.data)
+  async getRoom(){
+    // wx.cloud.database().collection("room").get().then(res=>{
+    //   console.log(res.data)
+    // })
+   // console.log("2222222222222",DB)
+    await DBconnection.getCollection("room").then(res=>{
+      console.error("999999999999999999",res);
     })
   },
   scrollEvent(e) {
