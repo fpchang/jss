@@ -1,5 +1,6 @@
 // pages/home/home.js
 import DBconnection from '../../api/DB';
+import SlideShow from './js/slideShow';
 const computedBehavior = require("miniprogram-computed").behavior;
 const createRecycleContext = require('miniprogram-recycle-view');
 //const DBconnection = new DB();
@@ -11,8 +12,8 @@ Page({
    */
   data: {
     scrollTop: 0,
-    active:1,
-    images: ['demo-text-1', 'demo-text-2', 'demo-text-3','demo-text-1', 'demo-text-2']
+    active:0,
+    slideShowList: []
   },
 
   /**
@@ -20,6 +21,9 @@ Page({
    */
   onLoad(options) {
     this.getRoom();
+    SlideShow.getSlideShow().then(res=>{
+      this.setData({slideShowList:res.data})
+    })
   },
 
   /**
@@ -111,5 +115,8 @@ Page({
       return;
     }
     this.onPullDownRefresh();
+  },
+  menuOnChange(e){
+    this.setData({ active: e.detail });
   }
 })

@@ -21,10 +21,10 @@
     <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: 100%;background-color: rgb(241, 241, 241);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
       <view>
         <swiper style="height: 75vw;" indicator-dots="{{true}}" autoplay="{{false}}" interval="{{4500}}" duration="{{500}}">
-          <block wx:for="{{images}}" wx:key="*this">
+          <block wx:for="{{slideShowList}}" wx:key="*this">
             <swiper-item>
               <view>
-                <image style="width: 100vw;height: 75vw;" mode="aspectFill" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/jss{{index+1}}.jpg" />
+                <image style="width: 100vw;height: 75vw;" mode="aspectFill" src="{{item.imgUrl}}" />
               </view>
             </swiper-item>
           </block>
@@ -45,7 +45,7 @@
     </scroll-view>
   </view>
   <view class="flex-page-bottom" style="height: 150rpx;">
-    <van-tabbar active="{{ active }}" safe-area-inset-bottom="{{true}}" bind:change="onChange" fixed="{{false}}" border="{{false}}">
+    <van-tabbar active="{{ active }}" safe-area-inset-bottom="{{true}}" bind:change="menuOnChange" fixed="{{false}}" border="{{false}}">
       <van-tabbar-item icon="home-o">门店介绍</van-tabbar-item>
       <van-tabbar-item icon="search">客户预定</van-tabbar-item>
       <van-tabbar-item icon="friends-o">我的</van-tabbar-item>

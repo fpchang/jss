@@ -1,9 +1,9 @@
+import DB from '../../../api/DB';
+import psEvent from '../../../api/psEvent';
 class SlideShow{
   constructor(){}
-  async getSlideShow(){
-    await wx.cloud.database().collection("slideShow").get().then(res=>{
-      console.log(res.data)
-    })
+   async getSlideShow(){
+     return DB.getCollection("slideShow");    
   }
 }
-module.exports=SlideShow;
+module.exports=new SlideShow();
