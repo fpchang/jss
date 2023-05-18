@@ -15,34 +15,8 @@
     </view>
   </view>
   <view class="flex-page-content">
-    <!-- <view style="height: 100rpx;">
-      <button bindtap="getRoom">查询{{navbarOpacity}}</button>
-    </view> -->
-    <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: 100%;background-color: rgb(241, 241, 241);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
-      <view>
-        <swiper style="height: 75vw;" indicator-dots="{{true}}" autoplay="{{false}}" interval="{{4500}}" duration="{{500}}">
-          <block wx:for="{{slideShowList}}" wx:key="*this">
-            <swiper-item>
-              <view>
-                <image style="width: 100vw;height: 75vw;" mode="aspectFill" src="{{item.imgUrl}}" />
-              </view>
-            </swiper-item>
-          </block>
-        </swiper>
-      </view>
-      <view class="jss-panal">
-        <include src="./ps/information.wxml"></include>
-      </view>
-
-      <view class="jss-panal">
-        <view class="label-title">民宿介绍</view>
-        <view>见山舍民宿位于，，，，，，1111</view>
-      </view>
-      <view class="jss-panal">
-        <view class="label-title">设施服务</view>
-        <include src="./ps/servicesFacilities"></include>
-      </view>
-    </scroll-view>
+    <view  hidden="{{active!=0}}" style="height: 100%;"><introduce></introduce></view>
+    <view  hidden="{{active!=1}}"><roomReservation></roomReservation></view>
   </view>
   <view class="flex-page-bottom" style="height: 150rpx;">
     <van-tabbar active="{{ active }}" safe-area-inset-bottom="{{true}}" bind:change="menuOnChange" fixed="{{false}}" border="{{false}}">

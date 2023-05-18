@@ -1,6 +1,5 @@
 // pages/home/home.js
 import DBconnection from '../../api/DB';
-import SlideShow from './js/slideShow';
 const computedBehavior = require("miniprogram-computed").behavior;
 const createRecycleContext = require('miniprogram-recycle-view');
 //const DBconnection = new DB();
@@ -12,8 +11,7 @@ Page({
    */
   data: {
     scrollTop: 0,
-    active:0,
-    slideShowList: []
+    active:0
   },
 
   /**
@@ -21,9 +19,7 @@ Page({
    */
   onLoad(options) {
     this.getRoom();
-    SlideShow.getSlideShow().then(res=>{
-      this.setData({slideShowList:res.data})
-    })
+  
   },
 
   /**
