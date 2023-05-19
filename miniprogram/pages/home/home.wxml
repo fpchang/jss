@@ -8,15 +8,20 @@
 /> -->
 <view class="flex-page">
   <view class="flex-page-nav">
-    <navbar page-name="见山舍" show-nav="{{true}}" pageType="1" opacity="{{1}}" bgColor="rgba(188,201,231,{{navbarOpacity}})"></navbar>
+    <!-- <navbar page-name="见山舍" show-nav="{{true}}" pageType="1" opacity="{{1}}" bgColor="rgba(188,201,231,{{navbarOpacity}})"></navbar> -->
+    <van-nav-bar title="见山舍" left-text="">
+      <!-- <van-icon name="search" slot="right" /> -->
+    </van-nav-bar>
     <view>
-
-
     </view>
   </view>
-    <view class="flex-page-content">
-    <view  hidden="{{active!=0}}" style="height: 100%;"><introduce></introduce></view>
-    <view  hidden="{{active!=1}}" style="height: 100%;"><roomReservation></roomReservation></view>
+  <view class="flex-page-content">
+    <view hidden="{{active!=0}}" style="height: 100%;">
+      <introduce></introduce>
+    </view>
+    <view hidden="{{active!=1}}" style="height: 100%;">
+      <roomReservation></roomReservation>
+    </view>
   </view>
   <view class="flex-page-bottom" style="height: 150rpx;">
     <van-tabbar active="{{ active }}" safe-area-inset-bottom="{{true}}" bind:change="menuOnChange" fixed="{{false}}" border="{{false}}">
