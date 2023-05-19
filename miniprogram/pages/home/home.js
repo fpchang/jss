@@ -11,7 +11,7 @@ Page({
    */
   data: {
     scrollTop: 0,
-    active:0
+    active:1
   },
 
   /**

@@ -3,6 +3,8 @@ class DB{
    getCollection(dbName){
      
     return new Promise((resolve,reject)=>{
+      resolve();
+      return;
       if(!dbName){
        reject("dbName is invalid")
       }

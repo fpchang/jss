@@ -14,9 +14,9 @@
 
     </view>
   </view>
-  <view class="flex-page-content">
+    <view class="flex-page-content">
     <view  hidden="{{active!=0}}" style="height: 100%;"><introduce></introduce></view>
-    <view  hidden="{{active!=1}}"><roomReservation></roomReservation></view>
+    <view  hidden="{{active!=1}}" style="height: 100%;"><roomReservation></roomReservation></view>
   </view>
   <view class="flex-page-bottom" style="height: 150rpx;">
     <van-tabbar active="{{ active }}" safe-area-inset-bottom="{{true}}" bind:change="menuOnChange" fixed="{{false}}" border="{{false}}">

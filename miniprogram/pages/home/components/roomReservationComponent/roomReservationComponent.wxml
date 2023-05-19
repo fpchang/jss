@@ -1,2 +1,21 @@
-<!--pages/home/components/roomReservationComponent/roomReservationComponent.wxml-->
-<text>pages/home/components/roomReservationComponent/roomReservationComponent.wxml</text>
+<view class="roomReservation">
+  <view class="dateSelect">
+    <view class="dateSelect-cell"><label>入住日期</label><label class="date-text">5月19日 周五</label></view>
+    <view class="dateSelect-cell"><label class="date-text">1晚</label></view>
+    <view class="dateSelect-cell"><label>结束日期</label><label class="date-text">5月20日 周六</label></view>
+  </view>
+ 
+  <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: calc(100% - 84rpx);background-color: rgb(241, 241, 241);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
+    <view class="room-card-list" style="box-sizing: border-box;padding:40rpx 0;">
+     <view class="room-card">
+      <image style="width: 650rpx;height:487rpx" mode="aspectFill" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/room/303/303.jpg" />
+      <van-cell title="山景浴缸大床房" value="" label="1室0厅1卫" />
+     </view>
+     <view class="room-card">
+      <image style="width: 650rpx;height:365rpx" mode="aspectFill" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/room/303/303.jpg" />
+      <van-cell title="山景浴缸大床房" value="" label="1室0厅1卫" />
+     </view>
+    </view>
+  </scroll-view>
+ 
+</view>
