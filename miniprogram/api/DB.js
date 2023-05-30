@@ -1,14 +1,12 @@
 class DB{
   constructor(){}
-   getCollection(dbName){
+   getCollection(dbName,w={}){
      
     return new Promise((resolve,reject)=>{
-      resolve();
-      return;
       if(!dbName){
        reject("dbName is invalid")
       }
-      wx.cloud.database().collection(dbName).get().then(res=>{
+      wx.cloud.database().collection(dbName).where(w).get().then(res=>{
         console.log(res.data);
         resolve(res)
       })

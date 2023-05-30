@@ -94,9 +94,9 @@ Page({
     //   console.log(res.data)
     // })
    // console.log("2222222222222",DB)
-    await DBconnection.getCollection("room").then(res=>{
-      console.error("999999999999999999",res);
-    })
+    // await DBconnection.getCollection("room").then(res=>{
+    //   console.error("999999999999999999",res);
+    // })
   },
   scrollEvent(e) {
     this.setData({

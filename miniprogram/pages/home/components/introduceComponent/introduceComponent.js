@@ -24,6 +24,7 @@ Component({
   methods: {
     getSlideShow() {
       DB.getCollection("slideShow").then(res => {
+        console.warn(res)
         this.setData({
           slideShowList: res.data
         })
