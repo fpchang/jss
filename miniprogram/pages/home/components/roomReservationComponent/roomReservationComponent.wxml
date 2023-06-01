@@ -5,7 +5,7 @@
     <view class="dateSelect-cell"><label>结束日期</label><label class="date-text">5月20日 周六</label></view>
   </view>
  
-  <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: calc(100% - 90rpx);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
+  <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: calc(100% - 120rpx);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
     <view class="room-card-list" style="box-sizing: border-box;padding:40rpx 0;">
      <view class="room-card" wx:for="{{roomTypeList}}" wx:key="i" >
      <navigator url="./romeDetail/romeDetail?room_id={{item._id}}">
