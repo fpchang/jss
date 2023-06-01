@@ -32,7 +32,7 @@
     <view class="room-info-list">
       <view class="room-info-list-item">
         <van-icon name="friends" size="60rpx" />
-        <view class="la">宜住2人</view>
+        <view class="la">宜住{{roominfo.occupancy}}人</view>
       </view>      
       
       <view class="room-info-list-item">
@@ -52,7 +52,7 @@
         <image src="../../../static/images/tv2.svg" style="width: 60rpx;height:60rpx;"></image>
         <view class="la">{{roominfo.tvSize}}寸电视</view>
       </view>
-      <view class="room-info-list-item">
+      <view class="room-info-list-item" wx:if="{{roominfo.tvSoundBox}}">
         <image src="../../../static/images/soundBox.svg" style="width: 60rpx;height:60rpx;"></image>
         <view class="la">影院音箱</view>
       </view>  
