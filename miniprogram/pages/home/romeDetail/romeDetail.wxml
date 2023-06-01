@@ -1,0 +1,79 @@
+<!-- <van-nav-bar
+  title="标题"
+  left-text="返回"
+  placeholder="{{false}}"
+  border="{{false}}"
+  bind:click-left="onClickLeft"
+  bind:click-right="onClickRight"
+/> -->
+<view class="flex-page roomDetail">
+  <view class="flex-page-nav">
+    <!-- <navbar page-name="见山舍" show-nav="{{true}}" pageType="1" opacity="{{1}}" bgColor="rgba(188,201,231,{{navbarOpacity}})"></navbar> -->
+    <van-nav-bar title="" left-text=""  fixed custom-style="background-color:rgba(255,255,255,0)" bind:click-left="navback" border="{{false}}">
+      <van-icon name="arrow-left" slot="left" color="#000" size="40rpx"/>
+    </van-nav-bar>
+    <view>
+    </view>
+  </view>
+  <view class="flex-page-content">
+  <scroll-view  scroll-y="{{true}}" scroll-x="{{false}}" style="height: 100%;background-color: rgb(241, 241, 241);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
+    <swiper style="height: 75vw;" indicator-dots="{{true}}" indicator-color="#FFF" autoplay="{{false}}" interval="{{4500}}" duration="{{500}}">
+      <block wx:for="{{roomImgsList}}" wx:key="*this">
+        <swiper-item>
+          <view>
+            <image style="width: 100vw;height: 75vw;" mode="aspectFill" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/{{item}}" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="room-label">{{roominfo.name}}</view>
+    <view class="room-info" style="height: 1000rpx;">
+    <view class="room-info-label">房型信息</view>
+    <view class="room-info-list">
+      <view class="room-info-list-item">
+        <van-icon name="friends" size="60rpx" />
+        <view class="la">宜住2人</view>
+      </view>      
+      
+      <view class="room-info-list-item">
+        <image src="../../../static/images/bashroom.svg" style="width: 60rpx;height:60rpx;"></image>
+        <view class="la">独立卫生间</view>
+      </view>  
+      <view class="room-info-list-item">
+        <image src="../../../static/images/area.svg" style="width: 60rpx;height:60rpx;"></image>
+        <view>{{roominfo.area}}{{roominfo.area_unit}}</view>
+      </view> 
+
+      <view class="room-info-list-item">
+        <image src="../../../static/images/balcony.svg" style="width: 60rpx;height:60rpx;"></image>
+        <view class="la">观景阳台</view>
+      </view>  
+      <view class="room-info-list-item">
+        <image src="../../../static/images/tv2.svg" style="width: 60rpx;height:60rpx;"></image>
+        <view class="la">{{roominfo.tvSize}}寸电视</view>
+      </view>
+      <view class="room-info-list-item">
+        <image src="../../../static/images/soundBox.svg" style="width: 60rpx;height:60rpx;"></image>
+        <view class="la">影院音箱</view>
+      </view>  
+      <view class="room-info-list-item" wx:if="{{roominfo.bathrobe}}">
+        <image src="../../../static/images/bathrobe2.svg" style="width: 60rpx;height:60rpx;"></image>
+        <view class="la">浴袍</view>
+      </view> 
+      <view class="room-info-list-item" wx:if="{{roominfo.bathrobe}}">
+        <image src="../../../static/images/toiletries.svg" style="width: 60rpx;height:60rpx;"></image>
+        <view class="la">洗漱护理</view>
+      </view> 
+      <view class="room-info-list-item">
+        <image src="../../../static/images/bed.svg" style="width: 60rpx;height:60rpx;"></image>
+        <view class="la">
+          <view wx:if="{{roominfo.bed.bed18}}">1.8米大床x{{roominfo.bed.bed18}}</view>
+          <view wx:if="{{roominfo.bed.bed15}}">1.5米大床{{roominfo.bed.bed15}}</view>
+        </view>
+      </view>
+    </view>
+    </view>
+  </scroll-view>
+ 
+  </view> 
+</view>

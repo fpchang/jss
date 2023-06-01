@@ -2,7 +2,7 @@
 
 
   <view>
-    <swiper style="height: 75vw;" indicator-dots="{{true}}" autoplay="{{false}}" interval="{{4500}}" duration="{{500}}">
+    <swiper style="height: 75vw;" indicator-dots="{{true}}" indicator-color="#FFF" autoplay="{{false}}" interval="{{4500}}" duration="{{500}}">
       <block wx:for="{{slideShowList}}" wx:key="*this">
         <swiper-item>
           <view>
@@ -18,7 +18,7 @@
 
   <view class="jss-panal">
     <view class="label-title">民宿介绍</view>
-    <view>见山舍民宿位于，，，，，，1111</view>
+    <view>见山舍民宿位于</view>
   </view>
   <view class="jss-panal">
     <view class="label-title">设施服务</view>

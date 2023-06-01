@@ -8,7 +8,7 @@
           <view>草地烧烤</view>
         </view>
         <view class="ad">
-          <view class="adone">
+          <view class="adone" bindtap="toMap">
             <van-icon name="location" color="green" size="40rpx" style="margin: 0rpx 10rpx -8rpx 0;" />
             <view>浙江省湖州市德清县莫干山镇北湖村上下庄一号</view>
           </view>

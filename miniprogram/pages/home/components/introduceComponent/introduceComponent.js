@@ -1,6 +1,7 @@
 // pages/home/components/introduceComponent.js
 import DB from '../../../../api/DB';
 import psEvent from '../../../../api/psEvent';
+import {CF} from '../../../../utils/CF';
 Component({
   /**
    * 组件的属性列表
@@ -29,6 +30,13 @@ Component({
           slideShowList: res.data
         })
       })
-    }
+    },
+ 
+    toMap:CF.throttle(function (e) {
+      console.log(2222);
+      wx.navigateTo({
+        url:'./homeDetail/homeDetail'
+      })
+    },3000)
   }
 })
