@@ -20,15 +20,41 @@
       <introduce></introduce>
     </view>
     <view hidden="{{active!=1}}" style="height: 100%;">
+      <food></food>
+    </view>
+    <view hidden="{{active!=2}}" style="height: 100%;">
       <roomReservation></roomReservation>
+    </view>
+    <view hidden="{{active!=4}}" style="height: 100%;">
+      <mine></mine>
     </view>
   </view>
   <view class="flex-page-bottom" style="height: 150rpx;">
     <van-tabbar active="{{ active }}" safe-area-inset-bottom="{{true}}" bind:change="menuOnChange" fixed="{{false}}" border="{{false}}">
-      <van-tabbar-item icon="home-o">门店介绍</van-tabbar-item>
-      <van-tabbar-item icon="search">客房信息</van-tabbar-item>
-      <van-tabbar-item icon="friends-o">我的</van-tabbar-item>
+      <van-tabbar-item>
+        <image slot="icon" src="../../static/images/introduce-line-black.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        <image slot="icon-active" src="../../static/images/introduce-line-blue.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        介绍</van-tabbar-item>
+      <van-tabbar-item>
+        <image slot="icon" src="../../static/images/food.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        <image slot="icon-active" src="../../static/images/food-blue.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        吃
+      </van-tabbar-item>
+      <van-tabbar-item>
+        <image slot="icon" src="../../static/images/bed-line-black.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        <image slot="icon-active" src="../../static/images/bed-line-blue.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        住
+      </van-tabbar-item>
+      <van-tabbar-item>
+        <image slot="icon" src="../../static/images/play-line-black.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        <image slot="icon-active" src="../../static/images/play-line-blue.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        玩
+      </van-tabbar-item>
+      <van-tabbar-item>
+        <image slot="icon" src="../../static/images/mine-line-black.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        <image slot="icon-active" src="../../static/images/mine-line-blue.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
+        我的</van-tabbar-item>
     </van-tabbar>
   </view>
-  
+  <!--1989fa-->
 </view>

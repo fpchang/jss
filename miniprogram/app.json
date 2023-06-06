@@ -1,7 +1,8 @@
 {
   "pages": [
-    
     "pages/home/home",
+    "pages/getOpenId/index",
+   
     "pages/home/romeDetail/romeDetail",
     "pages/home/mapLocation/mapLocation"
    

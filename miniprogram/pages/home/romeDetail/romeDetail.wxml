@@ -10,7 +10,7 @@
   <view class="flex-page-nav">
     <!-- <navbar page-name="见山舍" show-nav="{{true}}" pageType="1" opacity="{{1}}" bgColor="rgba(188,201,231,{{navbarOpacity}})"></navbar> -->
     <van-nav-bar title="" left-text=""  fixed custom-style="background-color:rgba(255,255,255,0)" bind:click-left="navback" border="{{false}}">
-      <van-icon name="arrow-left" slot="left" color="#000" size="40rpx"/>
+      <van-icon name="arrow-left" slot="left" color="#fff" size="50rpx"/>
     </van-nav-bar>
     <view>
     </view>

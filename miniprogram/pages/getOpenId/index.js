@@ -12,7 +12,7 @@ Page({
 
   onLoad(options) {
     this.setData({
-      envId: options.envId
+      envId: 'cloud1-7gj1lfpl09ab4ceb'
     });
   },
 
@@ -29,6 +29,7 @@ Page({
         type: 'getOpenId'
       }
     }).then((resp) => {
+      console.error(resp)
       this.setData({
         haveGetOpenId: true,
         openId: resp.result.openid

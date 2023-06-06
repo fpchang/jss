@@ -1,0 +1,22 @@
+/* pages/home/components/mine/mine.wxss */
+.user{
+  display: flex;
+}
+ .user-area {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 500;
+  padding: 60rpx 40rpx;
+
+
+}
+
+.user-area .im {
+  margin-right: 28rpx;
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  border-radius: 50%
+}

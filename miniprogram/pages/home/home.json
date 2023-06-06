@@ -5,10 +5,11 @@
   "usingComponents": {
     "introduce":"./components/introduceComponent/introduceComponent",
     "roomReservation":"./components/roomReservationComponent/roomReservationComponent",
+    "food":"./components/food/food",
+    "mine":"./components/mine/mine",
     "navbar": "../../components/navbar/index",
     "van-nav-bar": "@vant/weapp/nav-bar/index",
     "van-tabbar": "@vant/weapp/tabbar/index",
-    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
-    
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"   
   }
 }
