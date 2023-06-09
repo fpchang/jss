@@ -1,35 +1,43 @@
-class customer{
-  constructor(){
-
+class customer {
+  constructor() {
+    this._id = "",
+      this.avatarUrl = "",
+      this.city = "",
+      this.idCard = "",
+      this.mobile = "",
+      this.name = "",
+      this.nickName = "",
+      this.openId = ""
   }
-  initCustomer(){
-    // this._id="",
-    // this.avatarUrl="",
-    // this.city="",
-    // this.idCard="",
-    // this.mobile="",
-    // this.name="",
-    // this.nickName="",
-    // this.openId=""
+  initCustomer() {
+
     return {
-      _id:"",
-      avatarUrl:"",
-      city:"",
-      idCard:"",
-      mobile:"",
-      name:"",
-      nickName:"",
-      openId:""
+      _id: "",
+      avatarUrl: "",
+      city: "",
+      idCard: "",
+      mobile: "",
+      name: "",
+      nickName: "",
+      openId: ""
     }
   }
-  setCustomer(obj){
-    if(!obj){
+  setCustomer(obj) {
+    if (!obj) {
       return this.initCustomer();
     }
-    return Object.assign(this.initCustomer(),obj)
+    Object.assign(this, obj)
   }
-  getCustomer(){
-   return this.initCustomer();
+  getCustomer() {
+    return {
+      avatarUrl:this.avatarUrl,
+      city:this.city,
+      idCard:this.idCard,
+      mobile:this.mobile,
+      name:this.name,
+      nickName:this.nickName,
+      openId:this.openId
+    }
   }
 }
-module.exports= customer;
+module.exports = customer;

@@ -1,7 +1,7 @@
 <view class="user">
     <view class="user-area">
       <image  class="im" src="{{userInfo.avatarUrl||'../../../../static/images/avatar.svg'}}" />
-      <button wx:if="{{!userInfo.openId}}" bindtap="toLogin">{{'立即登录'}}</button>
+      <button class="btn" wx:if="{{!userInfo.openId}}" bindtap="toLogin" >{{'立即登录'}}</button>
       <view wx:if="{{userInfo.openId}}">{{userInfo.nickName}}</view>
     </view>
   </view>

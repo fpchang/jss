@@ -1,25 +1,87 @@
 <view class="rec">
-          <view class="rec-item">
-              <view class="rec-item-lab"><van-icon name="wap-home-o" size="120rpx" color=""></van-icon><view>房型设施</view></view>
-                <view class="rec-item-list">
-                <view class="rec-item-list-item"><van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>wifi</view>
-                <view class="rec-item-list-item"><van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>24小时热水</view>
-                <view class="rec-item-list-item"><van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>洗护用品</view>
-                <view class="rec-item-list-item"><van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>基础配套</view>
-              </view>          
-          </view>
-           <van-divider textColor="#1989fa" style="width: 70%;"></van-divider>
-           <view class="rec-item">
-              <view class="rec-item-lab"><van-icon name="fire-o" size="120rpx" color=""></van-icon><view>餐饮设施</view></view>
-                <view class="rec-item-list">
-                <view class="rec-item-list-item"><van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>咖啡</view>
-                
-              </view>          
-          </view>
-          <!-- <view class="rec-item">
-              <view class="rec-item-lab"><van-icon name="fire-o" size="120rpx" color=""></van-icon><view>餐饮设施</view></view>
-              <view class="rec-item-list">
-                <view class="rec-item-list-item"><van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>咖啡</view>                               
-              </view>
-          </view> -->
-        </view>
+  <view class="rec-item">
+    <view class="rec-item-lab">
+      <van-icon name="wap-home-o" size="120rpx" color=""></van-icon>
+      <view>房型设施</view>
+    </view>
+    <view class="rec-item-list">
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>WIFI
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>24小时热水
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>洗护用品
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>巨屏电视
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>浴缸
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>HIFI音箱
+      </view>
+    </view>
+  </view>
+  <van-divider textColor="#1989fa" style="width: 70%;"></van-divider>
+  <view class="rec-item">
+    <view class="rec-item-lab">
+      <van-icon name="fire-o" size="120rpx" color=""></van-icon>
+      <view>餐饮设施</view>
+    </view>
+    <view class="rec-item-list">
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>中餐
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>咖啡
+      </view>
+    </view>
+  </view>
+  <van-divider textColor="#1989fa" style="width: 70%;"></van-divider>
+  <view class="rec-item">
+    <view class="rec-item-lab">
+      <image src="../../../../static/images/yule.svg" style="width:120rpx ;height: 120rpx;"></image>
+      <view>休闲设施</view>
+    </view>
+    <view class="rec-item-list">
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>草地天幕
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>棋牌室
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>KTV
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>电影院
+      </view>
+      
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>XBOX游戏机
+      </view>
+
+    </view>
+  </view>
+  <van-divider textColor="#1989fa" style="width: 70%;"></van-divider>
+  <view class="rec-item">
+    <view class="rec-item-lab">
+      <image src="../../../../static/images/sport.svg" style="width:120rpx ;height: 120rpx;"></image>
+      <view>运动</view>
+    </view>
+    <view class="rec-item-list">
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>游泳池
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>蹦蹦床
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>自行车
+      </view>
+    </view>
+  </view>
+</view>

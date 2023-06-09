@@ -18,7 +18,7 @@
 
   <view class="jss-panal">
     <view class="label-title">民宿介绍</view>
-    <view>见山舍民宿位于</view>
+    <view style="text-indent:40rpx">见山舍民宿位于浙江省湖州市德清县莫干山镇北湖村上下庄一号,依山而建，竹林环绕，环境优美，属于天然氧吧。距离莫干山风景区直线6公里，距裸心谷500米。民宿装修时尚高雅，设施齐全，环境舒适。民宿配备游泳池，棋牌室，KTV,餐饮包厢，草地天幕等设施。是家庭出行，团队建设的不二之选。</view>
   </view>
   <view class="jss-panal">
     <view class="label-title">设施服务</view>

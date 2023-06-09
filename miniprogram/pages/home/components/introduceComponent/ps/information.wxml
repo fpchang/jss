@@ -1,7 +1,6 @@
 <view class="label-title">莫干山见山舍民宿</view>
         <view class="label-content">
           <view>免费停车</view>
-          <view>网红打卡</view>
           <view>情侣出行</view>
           <view>精品民宿</view>
           <view>卡拉ok</view>
@@ -12,6 +11,6 @@
             <van-icon name="location" color="green" size="40rpx" style="margin: 0rpx 10rpx -8rpx 0;" />
             <view>浙江省湖州市德清县莫干山镇北湖村上下庄一号</view>
           </view>
-          <!-- <van-icon name="wechat" color="green"  size="140rpx"/>
-        <van-icon name="wechat-pay"  color="green"  size="140rpx"/> -->
+          <van-icon name="wechat" color="green"  size="40rpx"/>
+        <van-icon name="phone"  color="green"  size="40rpx"/>
         </view>

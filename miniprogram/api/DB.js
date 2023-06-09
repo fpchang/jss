@@ -12,5 +12,10 @@ class DB{
       })
     })
   }
+  add(dbName,r={}){
+      return wx.cloud.database().collection(dbName).add({
+        data:r
+      })  
+  }
 }
 module.exports = new DB();
