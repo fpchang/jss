@@ -38,8 +38,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+ 
+  overflow: hidden;
   height: 80rpx;
   background-color: rgb(241, 241, 241);
   border-radius: 40rpx;
   flex: 1;
+}
+.ad .adone .la{
+  max-width: 400rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

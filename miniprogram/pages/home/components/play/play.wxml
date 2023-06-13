@@ -1,2 +1,13 @@
-<!--pages/home/components/play/play.wxml-->
-<text>pages/home/components/play/play.wxml</text>
+<view class="playReservation">
+  <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height:100%" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
+    <view class="play-card-list" style="box-sizing: border-box;padding:40rpx 0;">
+     <view class="play-card" wx:for="{{playList}}" wx:key="i" >
+     <!-- <navigator url="./romeDetail/romeDetail?play_id={{item._id}}"> -->
+      <image style="width: 650rpx;height:487rpx" mode="aspectFill" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/{{item.image}}" />
+    <!-- </navigator> -->
+      <van-cell title="{{item.name}}" value="{{item.label[0]}}" label="距离 {{item.distance}}{{item.distance_unit}}"/>
+     </view>
+    </view>
+  </scroll-view>
+ 
+</view>

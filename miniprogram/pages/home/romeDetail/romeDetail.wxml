@@ -12,8 +12,6 @@
     <van-nav-bar title="" left-text=""  fixed custom-style="background-color:rgba(255,255,255,0)" bind:click-left="navback" border="{{false}}">
       <van-icon name="arrow-left" slot="left" color="#fff" size="50rpx"/>
     </van-nav-bar>
-    <view>
-    </view>
   </view>
   <view class="flex-page-content">
   <scroll-view  scroll-y="{{true}}" scroll-x="{{false}}" style="height: 100%;background-color: rgb(241, 241, 241);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">

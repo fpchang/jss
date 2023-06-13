@@ -7,21 +7,31 @@ Page({
    */
   data: {
     location:{
-      latitude: "",
-      longitude: "",
+      latitude: 30.554341,
+      longitude: 119.872558,
       locationUpdateTime_Zn:"",
       recommend:""
     },
     mapKey:miniConfig.mapKey,
     recommend:"",
-    covers: [{
-      latitude: 23.099994,
-      longitude: 113.344520,
-      iconPath: '../../../static/images/icon-location-blue.png'
-    }, {
-      latitude: 23.099994,
-      longitude: 113.304520,
-      iconPath: '../../../static/images/icon-location-blue.png'
+    markers: [{
+      id:100,
+      title:"见山舍",
+      label:{
+        content:"浙江省湖州市德清县莫干山镇北湖村上下庄一号",
+        fontSize:'32rpx',
+        color:'#b15a1f',
+        anchorX:-170 ,
+        
+        bgColor:'#b15a1f90',
+        borderColor:'#000',
+        padding:'8rpx',
+        borderRadius:'12rpx'
+        
+      },
+      latitude: 30.554341,
+      longitude: 119.872558,
+      iconPath: '../../../static/images/location-red.svg'
     }]
   },
 
@@ -79,5 +89,8 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  navback(){
+    wx.navigateBack();
   }
 })

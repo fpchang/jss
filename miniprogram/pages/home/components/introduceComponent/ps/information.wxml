@@ -1,16 +1,27 @@
 <view class="label-title">莫干山见山舍民宿</view>
-        <view class="label-content">
-          <view>免费停车</view>
-          <view>情侣出行</view>
-          <view>精品民宿</view>
-          <view>卡拉ok</view>
-          <view>草地烧烤</view>
-        </view>
-        <view class="ad">
-          <view class="adone" bindtap="toMap">
-            <van-icon name="location" color="green" size="40rpx" style="margin: 0rpx 10rpx -8rpx 0;" />
-            <view>浙江省湖州市德清县莫干山镇北湖村上下庄一号</view>
-          </view>
-          <van-icon name="wechat" color="green"  size="40rpx"/>
-        <van-icon name="phone"  color="green"  size="40rpx"/>
-        </view>
+<view class="label-content">
+  <view wx:for="{{introduce.label}}">{{item}}</view>
+</view>
+<view class="ad">
+  <view class="adone" bindtap="toMap">
+    <van-icon name="location" color="green" size="40rpx" style="margin: 0rpx 10rpx -8rpx 0;" />
+    <view class="la">{{introduce.address}}</view>
+  </view>
+  <van-icon style="margin-left: 30rpx;" name="wechat" color="green" size="60rpx" bindtap="toConcat"/>
+  <van-icon style="margin-left: 30rpx;" name="phone" color="green" size="60rpx" bindtap="makePhone"/>
+</view>
+<van-overlay show="{{ showContact }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="block">
+      <view class="qr-lable">微信名:jianshanshe</view>
+      <image style="max-width: 500rpx;" mode="aspectFit" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/qrcode/wxskymind.jpg"></image>
+      <view>
+        <van-button color="#07c160" block bind:click="saveQrCode">
+        保存到相册
+      </van-button>
+      </view>
+      
+    </view>
+  </view>
+</van-overlay>
+<van-toast id="van-toast" />

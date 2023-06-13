@@ -1,4 +1,4 @@
-<view class="food">
+<view class="food" style="display: none;">
   <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: calc(100% - 120rpx);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
     <!-- <swiper style="height: 75vw;" indicator-dots="{{true}}" indicator-color="#FFF" autoplay="{{false}}" interval="{{4500}}" duration="{{500}}">
       <block wx:for="{{3}}" wx:key="*this">

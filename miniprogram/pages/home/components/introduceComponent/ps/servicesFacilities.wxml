@@ -1,39 +1,32 @@
 <view class="rec">
-  <view class="rec-item">
+  <block wx:for="{{servicesFacilities_data}}" wx:for-item="item">
+    <view class="rec-item">
     <view class="rec-item-lab">
-      <van-icon name="wap-home-o" size="120rpx" color=""></van-icon>
-      <view>房型设施</view>
+      <image src="{{item.icon}}" style="width:120rpx ;height: 120rpx;"></image>
+      <view>{{item.name}}</view>
     </view>
     <view class="rec-item-list">
-      <view class="rec-item-list-item">
-        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>WIFI
+      <view class="rec-item-list-item" wx:for="{{item.support}}" wx:for-item="it">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>{{it}}
       </view>
-      <view class="rec-item-list-item">
-        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>24小时热水
-      </view>
-      <view class="rec-item-list-item">
-        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>洗护用品
-      </view>
-      <view class="rec-item-list-item">
-        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>巨屏电视
-      </view>
-      <view class="rec-item-list-item">
-        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>浴缸
-      </view>
-      <view class="rec-item-list-item">
-        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>HIFI音箱
-      </view>
+   
     </view>
   </view>
   <van-divider textColor="#1989fa" style="width: 70%;"></van-divider>
-  <view class="rec-item">
+
+  </block>
+
+  <!-- <view class="rec-item">
     <view class="rec-item-lab">
-      <van-icon name="fire-o" size="120rpx" color=""></van-icon>
+      <image src="../../../../static/images/canying.svg" style="width:120rpx ;height: 120rpx;"></image>
       <view>餐饮设施</view>
     </view>
     <view class="rec-item-list">
       <view class="rec-item-list-item">
         <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>中餐
+      </view>
+      <view class="rec-item-list-item">
+        <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>烧烤
       </view>
       <view class="rec-item-list-item">
         <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>咖啡
@@ -83,5 +76,5 @@
         <van-icon name="checked" size="40rpx" color="green" style="margin:0 10rpx -10rpx 0"></van-icon>自行车
       </view>
     </view>
-  </view>
+  </view> -->
 </view>

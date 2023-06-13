@@ -1,0 +1,24 @@
+.wrapper{
+height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.wrapper .block{
+ 
+  background-color: #FFF;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+}
+.qr-lable{
+  text-align: center;
+  padding:20rpx;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+.van-icon__image{
+  margin-top: 10rpx;
+}

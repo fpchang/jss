@@ -1,17 +1,18 @@
 <view class="roomReservation">
-  <view class="dateSelect">
-    <view class="dateSelect-cell"><label>入住日期</label><label class="date-text">5月19日 周五</label></view>
+  <view class="dateSelect" style="display: none;">
+    <!--  calc(100% - 120rpx)<view class="dateSelect-cell"><label>入住日期</label><label class="date-text">5月19日 周五</label></view>
     <view class="dateSelect-cell"><label class="date-text">1晚</label></view>
-    <view class="dateSelect-cell"><label>结束日期</label><label class="date-text">5月20日 周六</label></view>
+    <view class="dateSelect-cell"><label>结束日期</label><label class="date-text">5月20日 周六</label></view> -->
+    <view>房型</view>
   </view>
  
-  <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: calc(100% - 120rpx);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
+  <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: 100%" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
     <view class="room-card-list" style="box-sizing: border-box;padding:40rpx 0;">
      <view class="room-card" wx:for="{{roomTypeList}}" wx:key="i" >
      <navigator url="./romeDetail/romeDetail?room_id={{item._id}}">
       <image style="width: 650rpx;height:487rpx" mode="aspectFill" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/{{item.imgs.first}}" />
     </navigator>
-      <van-cell title="{{item.name}}" value="" label="{{item.description}}" />
+      <van-cell title="{{item.name}}" value="可住{{item.occupancy}}人" label="{{item.description}}" />
      </view>
     </view>
   </scroll-view>

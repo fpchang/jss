@@ -6,6 +6,7 @@
     "introduce":"./components/introduceComponent/introduceComponent",
     "roomReservation":"./components/roomReservationComponent/roomReservationComponent",
     "food":"./components/food/food",
+    "play":"./components/play/play",
     "mine":"./components/mine/mine",
     "navbar": "../../components/navbar/index",
     "van-nav-bar": "@vant/weapp/nav-bar/index",

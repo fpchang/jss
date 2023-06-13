@@ -1,7 +1,9 @@
 <!--pages/home/mapLocation/mapLocation.wxml-->
 <view class="flex-page">
   <view class="flex-page-nav">
-    <navbar page-name="" show-nav="{{true}}"></navbar>
+    <van-nav-bar title="" left-text=""  fixed custom-style="background-color:rgba(255,255,255,0)" bind:click-left="navback" border="{{false}}">
+      <van-icon name="arrow-left" slot="left" color="#000" size="50rpx"/>
+    </van-nav-bar>
   </view>
   <view class="flex-page-content">
     <view class="map-style">
@@ -14,7 +16,7 @@
       covers="{{covers}}"
       subkey="{{mapKey}}"
       layer-style="1"
-      scale="{{14}}"
+      scale="{{15}}"
       show-location="{{false}}"
      
     ></map>
