@@ -14,6 +14,8 @@ Component({
    * 组件的初始数据
    */
   data: {
+    showWrapper:false,
+    showMenu:false,
     openid:'',
     userInfo:{}
   },
@@ -27,6 +29,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onClickHide(){
+      this.setData({showWrapper:false})
+    },
     loginState(){
      this.setData({userInfo:this.getUserInfoFromStorage()})
     },
@@ -92,7 +97,44 @@ Component({
     getUserInfoFromStorage(){
       return wx.getStorageSync('userInfo');
     },
-    
+    showQrCodeAction(){
+      this.setData({showWrapper:true})
+    },
+    shareJss() {
+      // return {
+      //   path:"pages/home/home",
+      //   imageUrl:"cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/s1.jpg"
+      // }
+      this.triggerEvent('shareJss');
+      },saveQrCode:CF.throttle( function (e) {
+        wx.showLoading();
+         wx.cloud.downloadFile({
+          fileID: 'cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/qrcode/qrcode-pro.png', // 文件 ID
+          success: res => {
+            // 返回临时文件路径
+            console.log(res.tempFilePath)
+            wx.saveImageToPhotosAlbum({
+              filePath:res.tempFilePath,
+              success(re) {
+                wx.hideLoading();
+                wx.showToast({
+                  title: '保存成功',
+                  icon:'success'
+                })
+               },
+               fail(err){
+                wx.hideLoading();
+                wx.showToast({
+                  title: '保存失败',
+                  icon:'error'
+                })
+                
+               }
+            })
+          },
+          fail: console.error
+        })        
+      },3000),
 
   }
 })

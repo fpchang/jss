@@ -65,9 +65,11 @@
       <view class="room-info-list-item">
         <image src="../../../static/images/bed.svg" style="width: 60rpx;height:60rpx;"></image>
         <view class="la">
-          <view wx:if="{{roominfo.bed.bed18}}">1.8米大床x{{roominfo.bed.bed18}}</view>
-          <view wx:if="{{roominfo.bed.bed15}}">1.5米大床x{{roominfo.bed.bed15}}</view>
-          <view wx:if="{{roominfo.bed.bed12}}">1.2米大床x{{roominfo.bed.bed12}}</view>
+          <view wx:if="{{roominfo.bed.bed18}}">1.8m x {{roominfo.bed.bed18}}</view>
+          <view wx:if="{{roominfo.bed.bed15}}">1.5m x {{roominfo.bed.bed15}}</view>
+          <view wx:if="{{roominfo.bed.bed13}}">1.35m x {{roominfo.bed.bed13}}</view>
+          <view wx:if="{{roominfo.bed.bed12}}">1.2m x {{roominfo.bed.bed12}}</view>
+
         </view>
       </view>
     </view>

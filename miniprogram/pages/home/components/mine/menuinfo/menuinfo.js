@@ -1,38 +1,11 @@
-// pages/home/mapLocation/mapLocation.js
-import {miniConfig} from '../../../config/miniConfig';
+// pages/home/components/mine/menuinfo/menuinfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    location:{
-      latitude: 30.554341,
-      longitude: 119.872558,
-      locationUpdateTime_Zn:"",
-      recommend:""
-    },
-    mapKey:miniConfig.mapKey,
-    recommend:"",
-    markers: [{
-      id:100,
-      title:"见山舍",
-      label:{
-        content:"浙江省湖州市德清县莫干山镇北湖村上下庄一号",
-        fontSize:'32rpx',
-        color:'#b15a1f',
-        anchorX:-170 ,
-        
-        bgColor:'#b15a1f90',
-        borderColor:'#000',
-        padding:'8rpx',
-        borderRadius:'12rpx'
-        
-      },
-      latitude: 30.554341,
-      longitude: 119.872558,
-      iconPath: '../../../static/images/location-red.svg'
-    }]
+
   },
 
   /**
@@ -76,7 +49,9 @@ Page({
   onPullDownRefresh() {
 
   },
-
+  navback(){
+    wx.navigateBack();
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -92,8 +67,5 @@ Page({
       path:"pages/home/home",
       imageUrl:"cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/s1.jpg"
     }
-  },
-  navback(){
-    wx.navigateBack();
   }
 })

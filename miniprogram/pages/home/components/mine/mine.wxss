@@ -1,6 +1,12 @@
 /* pages/home/components/mine/mine.wxss */
-.user{
+@import './wrapper.wxss';
+.mine-view{
   display: flex;
+  flex-direction: column;
+  height:calc(100%);
+}
+.user{
+  
 }
  .user-area {
   display: flex;
@@ -27,4 +33,10 @@
 }
 .btn::after{
   border: none;
+}
+.qrview{
+  padding:30rpx 0;
+  vertical-align: top;
+  display: flex;
+  justify-content: center;
 }

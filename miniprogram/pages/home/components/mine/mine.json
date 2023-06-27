@@ -1,4 +1,10 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+  "van-cell-group": "@vant/weapp/cell-group/index"
+
+  }
 }

@@ -68,7 +68,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+  return {
+    imageUrl:"cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/s1.jpg"
+  }
   },
   computed:{
    

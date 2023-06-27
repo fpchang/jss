@@ -29,7 +29,7 @@
       <play></play>
     </view>
     <view hidden="{{active!=4}}" style="height: 100%;">
-      <mine></mine>
+      <mine bind:shareJss="onShareAppMessage"></mine>
     </view>
   </view>
   <!--#B15A1F-->
@@ -39,7 +39,7 @@
         <image slot="icon" src="../../static/images/introduce-line-black.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
         <image slot="icon-active" src="../../static/images/introduce-line-orange.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
         介绍</van-tabbar-item>
-      <van-tabbar-item>
+      <van-tabbar-item style="display: none;">
         <image slot="icon" src="../../static/images/food.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
         <image slot="icon-active" src="../../static/images/food-orange.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
         吃
