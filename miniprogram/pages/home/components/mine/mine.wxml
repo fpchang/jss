@@ -8,8 +8,8 @@
 
   </view>
   <view class="menu-list">
-    <van-cell title="查看二维码" is-link bindtap="showQrCodeAction"/>
-    <van-cell title="查看菜单" is-link  link-type="navigateTo"
+    <van-cell size="large" title="查看二维码" is-link bindtap="showQrCodeAction"/>
+    <van-cell size="large" title="查看菜单" is-link  link-type="navigateTo"
   url="/pages/home/components/mine/menuinfo/menuinfo"/>
    
   </view>
