@@ -24,6 +24,7 @@ Component({
   },
   ready(){
     this.loginState();
+    this.getMenuAuthority();
   },
   /**
    * 组件的方法列表
@@ -35,7 +36,14 @@ Component({
     loginState(){
      this.setData({userInfo:this.getUserInfoFromStorage()})
     },
-
+    getMenuAuthority() {
+      DB.getCollection("authority").then(res => {
+        console.log("authority", res,res.data.find(item=>item.moduleType=="mine"))
+        res.data.length&&this.setData({
+         authorize:res.data.find(item=>item.moduleType=="mine")
+        })
+      })
+    },
     toLogin:CF.throttle(function(e){
       wx.showLoading();
       let that =this;
