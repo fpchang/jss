@@ -11,6 +11,8 @@
     <van-cell wx:if="{{authorize.au.lookQrcode.accessAll}}" size="large" title="查看二维码" is-link bindtap="showQrCodeAction"/>
     <van-cell wx:if="{{authorize.au.lookMenu.accessAll}}" size="large" title="查看菜单" is-link  link-type="navigateTo"
   url="/pages/home/components/mine/menuinfo/menuinfo"/>
+  <van-cell wx:if="{{true}}" size="large" title="订房记录" is-link  link-type="navigateTo"
+  url="/pages/home/components/mine/orderRecord/orderRecord"/>
    
   </view>
   <!-- <view class="qrview">

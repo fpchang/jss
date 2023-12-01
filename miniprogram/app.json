@@ -4,7 +4,8 @@
     "pages/getOpenId/index",
     "pages/home/romeDetail/romeDetail",
     "pages/home/mapLocation/mapLocation",
-    "pages/home/components/mine/menuinfo/menuinfo"
+    "pages/home/components/mine/menuinfo/menuinfo",
+    "pages/home/components/mine/orderRecord/orderRecord"
   ],
   "window": {
     "backgroundTextStyle": "dark",
