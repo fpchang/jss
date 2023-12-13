@@ -6,7 +6,7 @@
       <block wx:for="{{slideShowList}}" wx:key="*this">
         <swiper-item>
           <view>
-            <image style="width: 100vw;height: 75vw;" mode="aspectFill" src="{{item.imgUrl}}" />
+            <image 	show-menu-by-longpress style="width: 100vw;height: 75vw;" mode="aspectFill" src="{{item.imgUrl}}" />
           </view>
         </swiper-item>
       </block>

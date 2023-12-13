@@ -47,12 +47,12 @@
       <van-tabbar-item>
         <image slot="icon" src="../../static/images/bed-line-black.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
         <image slot="icon-active" src="../../static/images/bed-line-orange.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
-        住
+        房型
       </van-tabbar-item>
       <van-tabbar-item>
         <image slot="icon" src="../../static/images/play-line-black.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
         <image slot="icon-active" src="../../static/images/play-line-orange.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
-        玩
+        游乐
       </van-tabbar-item>
       <van-tabbar-item>
         <image slot="icon" src="../../static/images/mine-line-black.svg" mode="aspectFit" style="width: 50rpx; height: 50rpx;" />
