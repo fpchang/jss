@@ -1,5 +1,8 @@
 // pages/home/home.js
+import DBconnection from '../../api/DB';
 const computedBehavior = require("miniprogram-computed").behavior;
+const createRecycleContext = require('miniprogram-recycle-view');
+//const DBconnection = new DB();
 let app =getApp();
 Page({
   behaviors: [computedBehavior],
@@ -8,22 +11,22 @@ Page({
    */
   data: {
     scrollTop: 0,
-    active:1,
-    images: ['demo-text-1', 'demo-text-2', 'demo-text-3','demo-text-1', 'demo-text-2']
+    active:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getRoom();
+  
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    
+  
   },
 
   /**
@@ -65,7 +68,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+  return {
+    imageUrl:"cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/s1.jpg"
+  }
   },
   computed:{
    
@@ -86,10 +91,14 @@ Page({
       },
   
   },
-  getRoom(){
-    wx.cloud.database().collection("room").get().then(res=>{
-      console.log(res.data)
-    })
+  async getRoom(){
+    // wx.cloud.database().collection("room").get().then(res=>{
+    //   console.log(res.data)
+    // })
+   // console.log("2222222222222",DB)
+    // await DBconnection.getCollection("room").then(res=>{
+    //   console.error("999999999999999999",res);
+    // })
   },
   scrollEvent(e) {
     this.setData({
@@ -104,5 +113,8 @@ Page({
       return;
     }
     this.onPullDownRefresh();
+  },
+  menuOnChange(e){
+    this.setData({ active: e.detail });
   }
 })

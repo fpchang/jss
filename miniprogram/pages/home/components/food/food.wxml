@@ -1,0 +1,42 @@
+<view class="food" style="display: none;">
+  <scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: calc(100% - 120rpx);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
+    <!-- <swiper style="height: 75vw;" indicator-dots="{{true}}" indicator-color="#FFF" autoplay="{{false}}" interval="{{4500}}" duration="{{500}}">
+      <block wx:for="{{3}}" wx:key="*this">
+        <swiper-item>
+          <view>
+            <image style="width: 100vw;height: 75vw;" mode="aspectFill" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/foods/kafei.jpg" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper> -->
+    <view class="food-card" wx:for="{{foodList}}" wx:key="name" >
+      <view class="img-list">
+      <view class="img-list-item" wx:for="{{item.imgs}}" wx:key="*this" wx:for-item="i">
+        <image mode="widthFix"  src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/{{i}}"></image>
+      </view> 
+    </view>
+    <view class="f-p-l">
+      <label>{{item.name_Zn}}</label>
+      <view>免费</view>
+    </view>
+    </view>
+    <view class="food-card">
+      <view class="img-list">
+      <view class="img-list-item">
+        <image mode="widthFix"  src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/foods/kafei.jpg"></image>
+      </view>
+      <view class="img-list-item">
+        <image mode="widthFix" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/foods/kafei.jpg"></image>
+      </view>
+      <view class="img-list-item">
+        <image mode="widthFix" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/foods/kafei.jpg"></image>
+      </view>
+    </view>
+    <view class="f-p-l">
+      <label>饮料</label>
+      <view>免费</view>
+    </view>
+    </view>
+  </scroll-view>
+
+</view>

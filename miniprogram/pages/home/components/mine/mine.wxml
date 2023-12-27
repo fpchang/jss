@@ -1,0 +1,42 @@
+<view class="mine-view">
+  <view class="user">
+    <view class="user-area">
+      <image class="im" src="{{userInfo.avatarUrl||'../../../../static/images/avatar.svg'}}" />
+      <button class="btn" wx:if="{{!userInfo.openId}}" bindtap="toLogin">{{'立即登录'}}</button>
+      <view wx:if="{{userInfo.openId}}">{{userInfo.nickName}}</view>
+    </view>
+
+  </view>
+  <view class="menu-list">
+    <van-cell wx:if="{{authorize.au.lookQrcode.accessAll}}" size="large" title="查看二维码" is-link bindtap="showQrCodeAction"/>
+    <van-cell wx:if="{{authorize.au.lookMenu.accessAll}}" size="large" title="查看菜单" is-link  link-type="navigateTo"
+  url="/pages/home/components/mine/menuinfo/menuinfo"/>
+  <van-cell wx:if="{{au_checkOrder}}" size="large" title="订房记录" is-link  link-type="navigateTo"
+  url="/pages/home/components/mine/orderRecord/orderRecord"/>
+   
+  </view>
+  <!-- <view class="qrview">
+    <view style="width: 400rpx;overflow: hidden;">
+      <image style="vertical-align:top;width: 400rpx; height: 400rpx;" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/qrcode/qrcode-pro.png"></image>
+      <van-button color="#07c160" block bind:click="saveQrCode">
+        转发小程序
+      </van-button>
+    </view>
+
+  </view> -->
+</view>
+
+<van-overlay show="{{ showWrapper }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="block">
+      <view class="qr-lable">见山舍</view>
+      <image style="max-width: 500rpx;" mode="aspectFit" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/qrcode/qrcode-pro.png"></image>
+      <view>
+        <van-button color="#07c160" block bind:click="saveQrCode">
+        保存到相册
+      </van-button>
+      </view>
+      
+    </view>
+  </view>
+</van-overlay>

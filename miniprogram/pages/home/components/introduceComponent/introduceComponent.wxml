@@ -1,0 +1,28 @@
+<scroll-view scroll-y="{{true}}" scroll-x="{{false}}" style="height: 100%;background-color: rgb(241, 241, 241);" bindrefresherrefresh="onScrollRefresh" bindscroll="scrollEvent">
+
+
+  <view>
+    <swiper style="height: 75vw;" indicator-dots="{{true}}" indicator-color="#FFF" autoplay="{{false}}" interval="{{4500}}" duration="{{500}}">
+      <block wx:for="{{slideShowList}}" wx:key="*this">
+        <swiper-item>
+          <view>
+            <image 	show-menu-by-longpress style="width: 100vw;height: 75vw;" mode="aspectFill" src="{{item.imgUrl}}" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="jss-panal">
+    <include src="./ps/information.wxml"></include>
+  </view>
+
+  <view class="jss-panal">
+    <view class="label-title">民宿介绍</view>
+    <view style="text-indent:40rpx">{{introduce.introduce}}</view>
+  </view>
+  <view class="jss-panal">
+    <view class="label-title">设施服务</view>
+    <include src="./ps/servicesFacilities"></include>
+  </view>
+
+</scroll-view>

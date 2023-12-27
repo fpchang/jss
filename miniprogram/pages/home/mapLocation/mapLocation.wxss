@@ -1,0 +1,4 @@
+/* pages/home/mapLocation/mapLocation.wxss */
+.mapLocation{
+  background-color: rgb(245, 245, 245);
+}

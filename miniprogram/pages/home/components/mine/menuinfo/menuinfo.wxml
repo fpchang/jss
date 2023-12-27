@@ -1,0 +1,11 @@
+<view class="flex-page menuinfo">
+  <view class="flex-page-nav">
+    
+    <van-nav-bar title="见山舍民宿菜单" left-text=""   custom-style="background-color:rgba(255,255,255,0)" bind:click-left="navback" border="{{false}}">
+      <van-icon name="arrow-left" slot="left" color="#000" size="50rpx"/>
+    </van-nav-bar>
+  </view>
+  <view class="flex-page-content">
+  <image show-menu-by-longpress style="width: 750rpx;height:1060rpx;vertical-align: top;" mode="aspectFit" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/menu/menu_ori.jpg"></image>
+  </view>
+  </view>

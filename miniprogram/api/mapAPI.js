@@ -1,0 +1,4 @@
+class mapAPI{
+  constructor(){}
+  
+}

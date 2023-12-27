@@ -1,0 +1,42 @@
+/* pages/home/components/mine/mine.wxss */
+@import './wrapper.wxss';
+.mine-view{
+  display: flex;
+  flex-direction: column;
+  height:calc(100%);
+}
+.user{
+  
+}
+ .user-area {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 500;
+  padding: 60rpx 40rpx;
+
+
+}
+
+.user-area .im {
+  margin-right: 28rpx;
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  border-radius: 50%
+}
+.btn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.btn::after{
+  border: none;
+}
+.qrview{
+  padding:30rpx 0;
+  vertical-align: top;
+  display: flex;
+  justify-content: center;
+}

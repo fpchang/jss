@@ -1,0 +1,21 @@
+export let servicesFacilities_data=[
+  {
+    name:"房型设施",
+    icon:"../../../../static/images/home.svg",
+    support:["WIFI","24小时热水","洗护用品","浴缸","巨屏电视","HIFI音箱"]
+  },
+  {
+    name:"餐饮设施",
+    icon:"../../../../static/images/canying.svg",
+    support:["中餐","烧烤","咖啡"]
+  },
+  {
+    name:"休闲设施",
+    icon:"../../../../static/images/yule.svg",
+    support:["草地天幕","棋牌室","KTV","电影院","XBOX游戏机"]
+  },{
+    name:"运动",
+    icon:"../../../../static/images/sport.svg",
+    support:["游泳池","蹦蹦床","自行车"]
+  }
+]

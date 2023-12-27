@@ -1,27 +1,23 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/index/index",
     "pages/getOpenId/index",
-    "pages/getMiniProgramCode/index",
-    "pages/deployService/index",
-    "pages/createCollection/index",
-    "pages/uploadFile/index",
-    "pages/selectRecord/index",
-    "pages/updateRecord/index",
-    "pages/updateRecordResult/index",
-    "pages/updateRecordSuccess/index",
-    "pages/sumRecord/index",
-    "pages/sumRecordResult/index"
-   
+    "pages/home/romeDetail/romeDetail",
+    "pages/home/mapLocation/mapLocation",
+    "pages/home/components/mine/menuinfo/menuinfo",
+    "pages/home/components/mine/orderRecord/orderRecord"
   ],
   "window": {
-
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index"
+  },
   "sitemapLocation": "sitemap.json"
-  
 }

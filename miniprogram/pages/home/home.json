@@ -1,12 +1,16 @@
 {
-  "navigationBarTitleText":"登录",
-  "disableScroll":true,
+  "navigationBarTitleText": "见山舍",
+  "disableScroll": true,
   "enablePullDownRefresh": false,
   "usingComponents": {
+    "introduce":"./components/introduceComponent/introduceComponent",
+    "roomReservation":"./components/roomReservationComponent/roomReservationComponent",
+    "food":"./components/food/food",
+    "play":"./components/play/play",
+    "mine":"./components/mine/mine",
     "navbar": "../../components/navbar/index",
-    "van-tabbar": "vant-weapp/tabbar/index",
-  "van-tabbar-item": "vant-weapp/tabbar-item/index",
-  "van-nav-bar": "vant-weapp/nav-bar/index",
-  "van-icon": "vant-weapp/icon/index"
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"   
   }
 }
