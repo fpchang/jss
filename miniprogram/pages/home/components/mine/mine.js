@@ -2,7 +2,9 @@
 import DB from '../../../../api/DB';
 import {CF} from '../../../../utils/CF';
 import customer from '../../../../dataBase/customer';
+const computedBehavior = require("miniprogram-computed").behavior;
 Component({
+  behaviors: [computedBehavior],
   /**
    * 组件的属性列表
    */
@@ -17,14 +19,20 @@ Component({
     showWrapper:false,
     showMenu:false,
     openid:'',
+    authorize:{},
     userInfo:{}
   },
   created(){
-   
+
   },
   ready(){
     this.loginState();
     this.getMenuAuthority();
+  },
+  computed:{
+    au_checkOrder(data){  
+      return data.authorize['au']&&(data.authorize['au']['checkOrder']['accessAll'] ||data.authorize['au']['checkOrder']['access'].includes(data.userInfo.openId) )
+    }
   },
   /**
    * 组件的方法列表
