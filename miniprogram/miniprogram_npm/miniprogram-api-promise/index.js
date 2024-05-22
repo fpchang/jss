@@ -4,11 +4,19 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
+<<<<<<< HEAD
 __DEFINE__(1715943547604, function(require, module, exports) {
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });var __TEMP__ = require('./promise');Object.defineProperty(exports, 'promisify', { enumerable: true, configurable: true, get: function() { return __TEMP__.promisify; } });Object.defineProperty(exports, 'promisifyAll', { enumerable: true, configurable: true, get: function() { return __TEMP__.promisifyAll; } });
 
 }, function(modId) {var map = {"./promise":1715943547605}; return __REQUIRE__(map[modId], modId); })
 __DEFINE__(1715943547605, function(require, module, exports) {
+=======
+__DEFINE__(1703685152382, function(require, module, exports) {
+if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });var __TEMP__ = require('./promise');Object.defineProperty(exports, 'promisify', { enumerable: true, configurable: true, get: function() { return __TEMP__.promisify; } });Object.defineProperty(exports, 'promisifyAll', { enumerable: true, configurable: true, get: function() { return __TEMP__.promisifyAll; } });
+
+}, function(modId) {var map = {"./promise":1703685152383}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1703685152383, function(require, module, exports) {
+>>>>>>> 7a21a307f987c2cc717624ad0494e970a320e5a6
 var __TEMP__ = require('./method');var asyncMethods = __TEMP__['asyncMethods'];
 
 function hasCallback(args) {
@@ -52,8 +60,13 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
 };exports.promisifyAll = promisifyAll
 
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });var promisify = exports.promisify = _promisify;
+<<<<<<< HEAD
 }, function(modId) { var map = {"./method":1715943547606}; return __REQUIRE__(map[modId], modId); })
 __DEFINE__(1715943547606, function(require, module, exports) {
+=======
+}, function(modId) { var map = {"./method":1703685152384}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1703685152384, function(require, module, exports) {
+>>>>>>> 7a21a307f987c2cc717624ad0494e970a320e5a6
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });var asyncMethods = exports.asyncMethods = [
   'canvasGetImageData',
   'canvasPutImageData',
@@ -204,7 +217,11 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
   'navigateBack'
 ];
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
+<<<<<<< HEAD
 return __REQUIRE__(1715943547604);
+=======
+return __REQUIRE__(1703685152382);
+>>>>>>> 7a21a307f987c2cc717624ad0494e970a320e5a6
 })()
 //miniprogram-npm-outsideDeps=[]
 //# sourceMappingURL=index.js.map

@@ -6,6 +6,6 @@
     </van-nav-bar>
   </view>
   <view class="flex-page-content">
-  <image style="width: 750rpx;height:1060rpx;vertical-align: top;" mode="aspectFit" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/menu/menu_ori.jpg"></image>
+  <image show-menu-by-longpress style="width: 750rpx;height:1060rpx;vertical-align: top;" mode="aspectFit" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/menu/menu_ori.jpg"></image>
   </view>
   </view>
