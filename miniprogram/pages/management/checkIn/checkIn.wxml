@@ -1,0 +1,34 @@
+<view class="flex-page">
+  <view class="flex-page-nav">
+    <van-nav-bar title="订单" left-text="">
+    </van-nav-bar>
+    <view>
+    </view>
+  </view>
+  <view class="flex-page-content">
+    <view style="display: flex;">
+      <view class="left-table-style">
+        <view class="th-style">房间号</view>
+        <view  class="td-style" wx:for="{{roomIdList}}">{{item}}</view>
+      </view>
+      <view class="checkInTable-style" style="flex: 1;">
+        <view class="checkIntable-content">
+          <view>
+            <view class="checkIntable-h-list">
+              <view class="checkIntable-h-list-h th-style" wx:for="{{dateListFormat}}" wx:for-item="item">{{item}}</view>
+            </view>
+            <view class="checkIntable-h-list" wx:for="{{roomIdList}}" wx:for-item="item">
+              <view class="checkIntable-h-list-h td-style {{it.isContinueCheckIn?'isContinueCheckIn':''}}" wx:for="{{getFormatTableList[item]}}" wx:for-item="it">{{it.userName?it.userName:''}}</view>
+            </view>
+
+          </view>
+        </view>
+        <view class="checkIntable-h-head" style="flex-direction: column;">
+
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+</view>

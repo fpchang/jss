@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "navbar": "../../../components/navbar/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-calendar": "@vant/weapp/calendar/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-radio": "@vant/weapp/radio/index",
+  "van-radio-group": "@vant/weapp/radio-group/index",
+  "van-cell-group": "@vant/weapp/cell-group/index"
+  }
+}

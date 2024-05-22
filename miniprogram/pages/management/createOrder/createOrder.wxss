@@ -1,0 +1,6 @@
+.order-page-style{
+  padding:0 30rpx;
+}
+.radio-style{
+  margin:12rpx;
+}

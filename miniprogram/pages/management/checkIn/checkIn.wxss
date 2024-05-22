@@ -1,0 +1,49 @@
+/* pages/management/checkIn/checkIn.wxss */
+.checkIntable-content{
+  display: flex;
+  width: 80vw;
+  overflow-x: scroll;
+  flex-direction: row;
+  font-size: 40rpx;
+}
+.left-table-style{
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-right: 2rpx solid #eee;
+}
+.th-style{
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-weight: bold;
+}
+.td-style{
+  height: 160rpx;
+  text-align: center;
+  line-height: 160rpx;
+  font-size: 35rpx;
+  margin-bottom: 20rpx;
+}
+.isContinueCheckIn{
+  background-color: rgba(238, 187, 187, 0.5);
+}
+.left-table-style .td-style{
+  font-weight: bold;
+  
+}
+.checkIntable-h-list{
+  display: flex;
+  flex-flow: row;
+  white-space: nowrap;
+  
+}
+.checkIntable-h-list .checkIntable-h-list-h{
+  width: 20vw;
+  overflow: hidden;
+  vertical-align: center;
+  justify-content: center;
+  text-align: center;
+  
+}

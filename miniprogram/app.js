@@ -1,4 +1,5 @@
 // app.js
+import {CF} from './utils/CF';
 App({
   onLaunch: function () {
     wx.login({
