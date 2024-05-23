@@ -5,9 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-showSelectDate:false,
-date:'',
-radio:0
+    showSelectDate: false,
+    source:"1",
+    date: '',
+    radio: 0,
+    roomSelectList:[]
   },
 
   /**
@@ -24,29 +26,43 @@ radio:0
 
   },
   onDisplay() {
-    this.setData({ showSelectDate: true });
+    this.setData({
+      showSelectDate: true
+    });
   },
   onClose() {
-    this.setData({ showSelectDate: false });
+    this.setData({
+      showSelectDate: false
+    });
   },
   formatDate(date) {
     date = new Date(date);
     return `${date.getMonth() + 1}/${date.getDate()}`;
   },
   onConfirm(event) {
+    console.log(event);
     const [start, end] = event.detail;
+    let startTime = new Date(start).getTime();
+    let endTime = new Date(end).getTime();
+
     this.setData({
-      show: false,
+      showSelectDate: false,
       date: `${this.formatDate(start)} - ${this.formatDate(end)}`,
     });
   },
   onChange(event) {
     console.log(event)
     this.setData({
-      radio: event.detail,
+      source: event.detail,
     });
   },
-  onClickLeft(){
+  roomChange(event){
+    console.log(event)
+    this.setData({
+      roomSelectList: event.detail,
+    });
+  },
+  onClickLeft() {
     console.error(333);
     wx.navigateBack();
   },

@@ -55,14 +55,13 @@ Page({
         }
 
         let dayNum = Math.round(timeDay / (1000 * 60 * 60 * 24)) + 1;
-        // console.error(item.userName,item.checkInStartDateTimeStamp,item.checkInStartDateTimeStamp,timeDay,dayNum);
         for (let j = 0; j < dayNum; j++) {
           datelistAll.push(item.checkInStartDateTimeStamp + j * 1000 * 60 * 60 * 24);
         }
 
       }
       datelistAll = (Array.from(new Set(datelistAll))).sort();
-      return datelistAll //.map(item=> new Date(item).Format("MM-dd"))
+      return datelistAll;
     },
     dateListFormat(data) {
       return data.dateList.map(item => new Date(item).Format("MM-dd"))
