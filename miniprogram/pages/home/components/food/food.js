@@ -28,7 +28,6 @@ Component({
   methods: {
     getRoomTypeList(){
       DB.getCollection("roomType").then(res=>{
-        console.warn(res)
         this.setData({roomTypeList:res.data})
       })
     }

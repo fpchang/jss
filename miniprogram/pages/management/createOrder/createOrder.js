@@ -1,7 +1,12 @@
 // pages/management/createOrder/createOrder.js
+import DB from '../../../api/DB';
 const computedBehavior = require("miniprogram-computed").behavior;
-import {valid} from '../../../utils/valid';
-import { API } from '../orderAPI';
+import {
+  valid
+} from '../../../utils/valid';
+import {
+  API
+} from '../orderAPI';
 Page({
 
   /**
@@ -10,25 +15,26 @@ Page({
   behaviors: [computedBehavior],
   data: {
     showSelectDate: false,
-    source:"1",
+    source: "1",
     dateRange: [],
     radio: 0,
-    userName:'',
-    phone:'',
-    roomSelectList:[],
-    orderItem:{}
+    userName: '',
+    phone: '',
+    wxName:'',
+    roomSelectList: [],
+    orderItem: {}
   },
-computed:{
-  commitButtonDidabled(data){
-    return !valid.required(data.userName)|| !valid.required(data.dateRange[0])
-  },
-  dateRangeFormat(data){
-    if(!data.dateRange[0]){
-      return '-';
+  computed: {
+    commitButtonDidabled(data) {
+      return !valid.required(data.userName) || !valid.required(data.dateRange[0])
+    },
+    dateRangeFormat(data) {
+      if (!data.dateRange[0]) {
+        return '-';
+      }
+      return `${new Date(data.dateRange[0]).Format("MM/dd")}-${new Date(data.dateRange[1]).Format("MM/dd")}`
     }
-    return`${new Date(data.dateRange[0]).Format("MM/dd")}-${new Date(data.dateRange[1]).Format("MM/dd")}`
-  }
-},
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -52,17 +58,17 @@ computed:{
       showSelectDate: false
     });
   },
-  
-  onConfirm(event) {
-    console.log(event);
+
+  onDateSelectConfirm(event) {
     const [start, end] = event.detail;
     let startTime = new Date(start).getTime();
     let endTime = new Date(end).getTime();
 
     this.setData({
       showSelectDate: false,
-      dateRange:[startTime,endTime]
+      dateRange: [startTime, endTime]
     });
+    this.getValidOrder();
   },
   onChange(event) {
     console.log(event)
@@ -75,7 +81,7 @@ computed:{
       userName: event.detail,
     });
   },
-  roomChange(event){
+  roomChange(event) {
     console.log(event)
     this.setData({
       roomSelectList: event.detail,
@@ -85,17 +91,32 @@ computed:{
     console.error(333);
     wx.navigateBack();
   },
-  commitOrder(){
-    if(!valid.required(this.data.userName)||!valid.required(this.data.dateRange[0])){
+  getValidOrder(){
+    wx.showLoading({
+      title: '查询中',
+    });
+    const _=wx.cloud.database().command;
+    DB.getCollection("order",{
+       "checkInStartDateTimeStamp": _.lte(this.data.dateRange[0]),
+       "checkInEndDateTimeStamp": _.gt(this.data.dateRange[0])
+
+    }).then(res=>{
+      console.log("查询结果",res);
+      wx.hideLoading();
+    })
+  },
+  commitOrder() {
+    if (!valid.required(this.data.userName) || !valid.required(this.data.dateRange[0])) {
       return;
     }
-    let item ={
+    let item = {
       createTime: new Date().getTime(),
       romeId: this.data.romeId,
-      roomArray:this.data.roomSelectList,
+      roomArray: this.data.roomSelectList,
       userName: this.data.userName,
+      wxName:this.data.wxName,
       checkInStartDateTimeStamp: this.data.dateRange[0],
-      checkInEndDateTimeStamp:  this.data.dateRange[1],
+      checkInEndDateTimeStamp: this.data.dateRange[1],
       checkInStartDate: new Date(this.data.dateRange[0]).Format('yyyy/MM/dd'),
       checkInEndDate: new Date(this.data.dateRange[1]).Format('yyyy/MM/dd'),
       phone: this.data.phone,
@@ -103,7 +124,7 @@ computed:{
       orderSouce_Zn: API.orderSource[this.data.source],
       orderStatus: 0
     }
-    console.log(item);
+    console.log(item, JSON.stringify(item));
   },
   /**
    * 生命周期函数--监听页面显示

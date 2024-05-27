@@ -17,7 +17,7 @@
           </van-radio-group>
         </van-cell>
         <van-cell title="选择日期区间" value="{{ dateRangeFormat }}" bind:click="onDisplay" />
-        <van-calendar show="{{ showSelectDate }}" required type="range" bind:close="onClose" bind:confirm="onConfirm" />
+        <van-calendar show="{{ showSelectDate }}" required type="range" bind:close="onClose" bind:confirm="onDateSelectConfirm" />
         <van-cell title="房间" center data-name="1">
           <van-checkbox-group value="{{ roomSelectList }}" bind:change="roomChange">
             <van-checkbox shape="square" custom-class="radio-style" name="201" checked-color="#07c160">201</van-checkbox>
@@ -29,8 +29,8 @@
         <van-cell-group>
           <van-field  required clearable label="用户名" icon="question-o" placeholder="请输入用户名" bind:click-icon="onClickIcon" model:value="{{ userName }}"/>
 
-          <van-field mode:value="{{ phone }}"  label="手机号" placeholder="请输入手机号" border="{{ false }}" />
-          <van-field wx:if="{{source=='4'}}" value="{{ username }}" required clearable label="微信号" icon="question-o" placeholder="请输入微信号" bind:click-icon="onClickIcon" />
+          <van-field model:value="{{ phone }}"  label="手机号" placeholder="请输入手机号" border="{{ false }}" />
+          <van-field wx:if="{{source=='4'}}" value="{{ wxName }}" required clearable label="微信号" icon="question-o" placeholder="请输入微信号" bind:click-icon="onClickIcon" />
         </van-cell-group>
 
 
