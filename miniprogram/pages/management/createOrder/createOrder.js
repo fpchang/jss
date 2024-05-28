@@ -20,7 +20,7 @@ Page({
     radio: 0,
     userName: '',
     phone: '',
-    wxName:'',
+    wxName: '',
     roomSelectList: [],
     orderItem: {}
   },
@@ -91,17 +91,39 @@ Page({
     console.error(333);
     wx.navigateBack();
   },
-  getValidOrder(){
+  getValidOrder() {
     wx.showLoading({
       title: '查询中',
     });
-    const _=wx.cloud.database().command;
-    DB.getCollection("order",{
-       "checkInStartDateTimeStamp": _.lte(this.data.dateRange[0]),
-       "checkInEndDateTimeStamp": _.gt(this.data.dateRange[0])
+    const _ = wx.cloud.database().command;
+    console.error(this.data.dateRange[0],this.data.dateRange[1]);
+    // DB.getCollection("order",{
+    //   "checkInStartDateTimeStamp": _.lt(this.data.dateRange[1]),
+    //   "checkInEndDateTimeStamp": _.gte(this.data.dateRange[1])
+    // }).then(res => {
+    //      console.log("查询结果", res);
+    //     wx.hideLoading();
+    //    })
+   DB.getCollection("order", _.or([
+      //开始日期在区间内
+      {
+        "checkInStartDateTimeStamp": _.lte(this.data.dateRange[0]),
+        "checkInEndDateTimeStamp": _.gt(this.data.dateRange[0])
 
-    }).then(res=>{
-      console.log("查询结果",res);
+      }
+      ,
+      //结束日期在区间内
+      {
+        "checkInStartDateTimeStamp": _.lt(this.data.dateRange[1]),
+        "checkInEndDateTimeStamp": _.gte(this.data.dateRange[1])
+      },
+      //日期区间包含已有订单区间
+      {
+        "checkInStartDateTimeStamp": _.gte(this.data.dateRange[0]),
+        "checkInEndDateTimeStamp": _.lte(this.data.dateRange[1])
+      }
+    ])).then(res => {
+      console.log("查询结果", res);
       wx.hideLoading();
     })
   },
@@ -114,7 +136,7 @@ Page({
       romeId: this.data.romeId,
       roomArray: this.data.roomSelectList,
       userName: this.data.userName,
-      wxName:this.data.wxName,
+      wxName: this.data.wxName,
       checkInStartDateTimeStamp: this.data.dateRange[0],
       checkInEndDateTimeStamp: this.data.dateRange[1],
       checkInStartDate: new Date(this.data.dateRange[0]).Format('yyyy/MM/dd'),
