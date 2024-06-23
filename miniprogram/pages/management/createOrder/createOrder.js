@@ -14,6 +14,8 @@ Page({
    */
   behaviors: [computedBehavior],
   data: {
+    roomIdList: ["201", "202", "203", "204", "301", "302", "303"],
+    validRoomIdList:[],
     showSelectDate: false,
     source: "1",
     dateRange: [],
@@ -123,7 +125,14 @@ Page({
         "checkInEndDateTimeStamp": _.lte(this.data.dateRange[1])
       }
     ])).then(res => {
-      console.log("查询结果", res);
+     
+      let ar = res.data.map(item=>item.roomArray).flat();
+      ar=(Array.from(new Set(ar))).sort();
+      let validarr = this.data.roomIdList.filter(el=>!ar.includes(el));
+      console.log("查询结果",ar,validarr);
+      this.setData({
+        validRoomIdList:(Array.from(new Set(validarr))).sort()
+      });
       wx.hideLoading();
     })
   },

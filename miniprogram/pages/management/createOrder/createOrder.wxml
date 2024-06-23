@@ -20,10 +20,8 @@
         <van-calendar show="{{ showSelectDate }}" required type="range" bind:close="onClose" bind:confirm="onDateSelectConfirm" />
         <van-cell title="房间" center data-name="1">
           <van-checkbox-group value="{{ roomSelectList }}" bind:change="roomChange">
-            <van-checkbox shape="square" custom-class="radio-style" name="201" checked-color="#07c160">201</van-checkbox>
-            <van-checkbox shape="square" custom-class="radio-style" name="202" checked-color="#07c160">202</van-checkbox>
-            <van-checkbox shape="square" custom-class="radio-style" name="203" checked-color="#07c160">203</van-checkbox>
-            <van-checkbox shape="square" custom-class="radio-style" name="204" checked-color="#07c160">204</van-checkbox>
+
+            <van-checkbox wx:for ="{{validRoomIdList}}" shape="square" disabled="{{!dateRange.length}}" custom-class="radio-style" name="{{item}}" checked-color="#07c160">{{item}}</van-checkbox>
           </van-checkbox-group>
         </van-cell>
         <van-cell-group>
