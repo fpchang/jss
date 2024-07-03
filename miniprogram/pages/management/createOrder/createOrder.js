@@ -1,5 +1,6 @@
 // pages/management/createOrder/createOrder.js
 import DB from '../../../api/DB';
+import Notify from '@vant/weapp/notify/notify';
 const computedBehavior = require("miniprogram-computed").behavior;
 import {
   valid
@@ -97,6 +98,7 @@ Page({
     wx.showLoading({
       title: '查询中',
     });
+    
     const _ = wx.cloud.database().command;
     console.error(this.data.dateRange[0],this.data.dateRange[1]);
     // DB.getCollection("order",{
@@ -140,6 +142,7 @@ Page({
     if (!valid.required(this.data.userName) || !valid.required(this.data.dateRange[0])) {
       return;
     }
+    wx.showLoading();
     let item = {
       createTime: new Date().getTime(),
       romeId: this.data.romeId,
@@ -155,7 +158,14 @@ Page({
       orderSouce_Zn: API.orderSource[this.data.source],
       orderStatus: 0
     }
-    console.log(item, JSON.stringify(item));
+    DB.insertData("order",item).then(res=>{
+      wx.hideLoading();
+      Notify({ type: 'success', message: '创建成功' });
+    }).catch(er=>{
+      wx.hideLoading();
+      Notify({ type: 'danger', message: '创建失败' });
+      
+    })
   },
   /**
    * 生命周期函数--监听页面显示

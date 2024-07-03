@@ -10,6 +10,7 @@
   "van-radio-group": "@vant/weapp/radio-group/index",
   "van-cell-group": "@vant/weapp/cell-group/index",
   "van-checkbox": "@vant/weapp/checkbox/index",
-  "van-checkbox-group": "@vant/weapp/checkbox-group/index"
+  "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+  "van-notify": "@vant/weapp/notify/index"
   }
 }

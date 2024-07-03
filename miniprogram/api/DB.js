@@ -12,6 +12,20 @@ class DB{
       })
     })
   }
+  insertData(dbName,r={}){
+    return new Promise((resolve,reject)=>{
+      if(!dbName){
+       reject("dbName is invalid")
+      }
+      wx.cloud.database().collection(dbName).add({
+        data:r
+      }).then(res=>{
+        resolve(res);
+      }).catch(er=>{
+        reject(er)
+      })
+    });
+  }
   add(dbName,r={}){
       return wx.cloud.database().collection(dbName).add({
         data:r
