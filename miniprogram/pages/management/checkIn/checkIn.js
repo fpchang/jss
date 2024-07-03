@@ -2,6 +2,7 @@
 import {
   CF
 } from '../../../utils/CF';
+import DB from '../../../api/DB';
 const computedBehavior = require("miniprogram-computed").behavior;
 Page({
 
@@ -10,35 +11,37 @@ Page({
    */
   behaviors: [computedBehavior],
   data: {
-    roomIdList: [201, 202, 203, 204, 301, 302, 303],
-    checkInOrderList: [{
-        createTime: 111,
-        romeId: "201",
-        userName: "张三",
-        checkInStartDateTimeStamp: 1716307200000,
-        checkInEndDateTimeStamp: 1717257600000,
-        checkInStartDate: "2024-05-22",
-        checkInEndDate: "2024-06-02",
-        phone: "13900991112",
-        orderSource: 1,
-        orderSouce_Zn: "携程",
-        orderStatus: 0
-      },
-      {
-        createTime: 222,
-        romeId: "202",
-        userName: "sbli",
-        checkInStartDateTimeStamp: 1716307200000,
-        checkInEndDateTimeStamp: 1716480000000,
-        checkInStartDate: "2024-05-22",
-        checkInEndDate: "2024-05-24",
-        phone: "13900991112",
-        orderSource: 1,
-        orderSouce_Zn: "携程",
-        orderStatus: 0
-      },
+    roomIdList: ["201", "202", "203", "204", "301", "302", "303"],
+    checkInOrderList: [],//[{
+    //     createTime: 111,
+    //     romeId: "201",
+    //     roomArray:["201","202"],
+    //     userName: "张三",
+    //     checkInStartDateTimeStamp: 1720108800000,
+    //     checkInEndDateTimeStamp: 1720281600000,
+    //     checkInStartDate: "2024-07-05",
+    //     checkInEndDate: "2024-07-07",
+    //     phone: "13900991112",
+    //     orderSource: 1,
+    //     orderSouce_Zn: "携程",
+    //     orderStatus: 0
+    //   },
+    //   {
+    //     createTime: 222,
+    //     romeId: "202",
+    //     roomArray:["203","204"],
+    //     userName: "sbli",
+    //     checkInStartDateTimeStamp: 1720368000000,
+    //     checkInEndDateTimeStamp: 1720454400000,
+    //     checkInStartDate: "2024-07-08",
+    //     checkInEndDate: "2024-07-09",
+    //     phone: "13900991112",
+    //     orderSource: 1,
+    //     orderSouce_Zn: "携程",
+    //     orderStatus: 0
+    //   },
 
-    ],
+    // ],
   },
   computed: {
     dateList(data) {
@@ -49,12 +52,12 @@ Page({
       for (let i = 0; i < data.checkInOrderList.length; i++) {
         let item = data.checkInOrderList[i];
         let timeDay = item.checkInEndDateTimeStamp - item.checkInStartDateTimeStamp; //时间差
-        if (timeDay == 0) {
+        if (timeDay == 1000*60*60*24) {
           datelistAll.push(item.checkInStartDateTimeStamp);
           continue;
         }
 
-        let dayNum = Math.round(timeDay / (1000 * 60 * 60 * 24)) + 1;
+        let dayNum = Math.round(timeDay / (1000 * 60 * 60 * 24));
         for (let j = 0; j < dayNum; j++) {
           datelistAll.push(item.checkInStartDateTimeStamp + j * 1000 * 60 * 60 * 24);
         }
@@ -74,7 +77,7 @@ Page({
       //根据房间分类
       for (let i = 0; i < data.roomIdList.length; i++) {
         let key = data.roomIdList[i];
-        let fil = data.checkInOrderList.filter(item => item.romeId == key);
+        let fil = data.checkInOrderList.filter(item => item.roomArray.includes(key));
         ar[data.roomIdList[i]] = fillObject(fil);
       }
 
@@ -88,7 +91,7 @@ Page({
             userName: ob.userName,
             phone: ob.phone,
             orderSouce_Zn: ob.orderSouce_Zn,
-            isContinueCheckIn:ob.checkInStartDateTimeStamp!=ob.checkInEndDateTimeStamp//是否连住
+            isContinueCheckIn:(ob.checkInEndDateTimeStamp-ob.checkInStartDateTimeStamp)>1000*60*60*24,//是否连住
           } : {
             userName: null
           };
@@ -96,20 +99,34 @@ Page({
         }
         return targetArray;
       }
-      console.warn("组合数据", ar);
       return ar;
     },
     arr(data) {
-      return JSON.stringify(data.getFormatTableList["201"]);
+     // return JSON.stringify(data.getFormatTableList["201"]);
     }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+this.getValidOrder();
   },
+  getValidOrder() {
+    wx.showLoading({
+      title: '查询中',
+    });
+    const _ = wx.cloud.database().command;
+   DB.getCollection("order",
+      //开始日期在区间内
+      {
+        "checkInStartDateTimeStamp": _.gte(new Date().getTime()-1000*60*60*24)
 
+      }
+     ).then(res => {
+      this.setData({checkInOrderList:res.data});
+      wx.hideLoading();
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

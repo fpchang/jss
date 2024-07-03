@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/management/createOrder/createOrder",
-    "pages/management/checkIn/checkIn",
+    
     "pages/home/home",
+    "pages/management/checkIn/checkIn",
+    "pages/management/createOrder/createOrder",
     "pages/getOpenId/index",
     "pages/home/romeDetail/romeDetail",
     "pages/home/mapLocation/mapLocation",

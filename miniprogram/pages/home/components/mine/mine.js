@@ -30,8 +30,11 @@ Component({
     this.getMenuAuthority();
   },
   computed:{
+    au_createOrder(data){
+      return data.authorize['au']&&(data.authorize['au']['createOrder']['accessAll'] ||data.authorize['au']['createOrder']['access'].includes(data.userInfo.openId));
+    },
     au_checkOrder(data){  
-      return data.authorize['au']&&(data.authorize['au']['checkOrder']['accessAll'] ||data.authorize['au']['checkOrder']['access'].includes(data.userInfo.openId) )
+      return data.authorize['au']&&(data.authorize['au']['checkOrder']['accessAll'] ||data.authorize['au']['checkOrder']['access'].includes(data.userInfo.openId));
     }
   },
   /**
@@ -116,6 +119,7 @@ Component({
     showQrCodeAction(){
       this.setData({showWrapper:true})
     },
+
     shareJss() {
       // return {
       //   path:"pages/home/home",

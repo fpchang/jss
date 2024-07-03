@@ -161,6 +161,7 @@ Page({
     DB.insertData("order",item).then(res=>{
       wx.hideLoading();
       Notify({ type: 'success', message: '创建成功' });
+      wx.navigateBack();
     }).catch(er=>{
       wx.hideLoading();
       Notify({ type: 'danger', message: '创建失败' });
