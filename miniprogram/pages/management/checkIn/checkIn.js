@@ -119,6 +119,7 @@ this.getValidOrder();
    DB.getCollection("order",
       //开始日期在区间内
       {
+        "orderStatus":0,
         "checkInStartDateTimeStamp": _.gte(new Date().getTime()-1000*60*60*24)
 
       }
