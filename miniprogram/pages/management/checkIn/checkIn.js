@@ -204,5 +204,8 @@ this.getValidOrder();
    */
   onShareAppMessage() {
 
+  },
+  onClickLeft() {
+    wx.navigateBack();
   }
 })

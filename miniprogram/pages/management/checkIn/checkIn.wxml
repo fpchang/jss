@@ -1,6 +1,6 @@
 <view class="flex-page">
   <view class="flex-page-nav">
-    <van-nav-bar title="订单" left-text="">
+    <van-nav-bar title="订单信息" left-text="" left-arrow bind:click-left="onClickLeft">
     </van-nav-bar>
     <view>
     </view>

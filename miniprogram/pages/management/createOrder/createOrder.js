@@ -91,7 +91,6 @@ Page({
     });
   },
   onClickLeft() {
-    console.error(333);
     wx.navigateBack();
   },
   getValidOrder() {
