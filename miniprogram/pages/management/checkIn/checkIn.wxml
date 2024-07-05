@@ -15,7 +15,9 @@
         <view class="checkIntable-content">
           <view>
             <view class="checkIntable-h-list">
-              <view class="checkIntable-h-list-h th-style" wx:for="{{dateListFormat}}" wx:for-item="item">{{item}}</view>
+              <view class=" th-style checkIntable-h-list-h" style="line-height: 75rpx;background-color: #eee;" wx:for="{{dateListFormat}}" wx:for-item="item">  
+                <view>{{item.de}}</view><view style="font-size: 35rpx;">{{item.dy}}</view> 
+              </view>
             </view>
             <view class="checkIntable-h-list" wx:for="{{roomIdList}}" wx:for-item="item">
               <view class="checkIntable-h-list-h td-style {{it.isContinueCheckIn?'isContinueCheckIn':''}}" wx:for="{{getFormatTableList[item]}}" wx:for-item="it">{{it.userName?it.userName:''}}</view>

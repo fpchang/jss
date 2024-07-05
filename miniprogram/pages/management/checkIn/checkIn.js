@@ -66,7 +66,10 @@ Page({
       return datelistAll;
     },
     dateListFormat(data) {
-      return data.dateList.map(item => new Date(item).Format("MM-dd"))
+      let dyStr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+      return data.dateList.map((item) =>{
+        return {de:new Date(item).Format("MM-dd"),dy:dyStr[new Date(item).getDay()]}
+      } )
     },
     getFormatTableList(data) {
       if (!data.dateList.length) {

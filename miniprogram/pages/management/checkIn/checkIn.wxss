@@ -14,9 +14,9 @@
   border-right: 2rpx solid #eee;
 }
 .th-style{
-  height: 100rpx;
+  height: 150rpx;
   text-align: center;
-  line-height: 100rpx;
+  line-height: 150rpx;
   font-weight: bold;
 }
 .td-style{
@@ -37,13 +37,16 @@
   display: flex;
   flex-flow: row;
   white-space: nowrap;
+  line-height: 75rpx;
   
 }
 .checkIntable-h-list .checkIntable-h-list-h{
-  width: 20vw;
+  width: 40vw;
   overflow: hidden;
   vertical-align: center;
   justify-content: center;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   
 }
