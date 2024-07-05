@@ -61,7 +61,6 @@ Page({
         for (let j = 0; j < dayNum; j++) {
           datelistAll.push(item.checkInStartDateTimeStamp + j * 1000 * 60 * 60 * 24);
         }
-
       }
       datelistAll = (Array.from(new Set(datelistAll))).sort();
       return datelistAll;
@@ -85,7 +84,7 @@ Page({
         let tempArray = data.dateList;
         let targetArray = [];
         for (let j = 0; j < tempArray.length; j++) {
-          let ob = filArray.find(item => item.checkInStartDateTimeStamp <= tempArray[j] && tempArray[j] <= item.checkInEndDateTimeStamp);
+          let ob = filArray.find(item => item.checkInStartDateTimeStamp <= tempArray[j] && tempArray[j] <item.checkInEndDateTimeStamp);
           let dataObj = ob ? {
             romeId: ob.romeId,
             userName: ob.userName,
