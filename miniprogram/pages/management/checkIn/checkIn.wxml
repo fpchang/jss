@@ -20,7 +20,7 @@
               </view>
             </view>
             <view class="checkIntable-h-list" wx:for="{{roomIdList}}" wx:for-item="item">
-              <view class="checkIntable-h-list-h td-style {{it.isContinueCheckIn?'isContinueCheckIn':''}}" wx:for="{{getFormatTableList[item]}}" wx:for-item="it">{{it.userName?it.userName:''}}</view>
+              <view class="checkIntable-h-list-h td-style {{it.isBalancePayment?'isContinueCheckIn':''}}" wx:for="{{getFormatTableList[item]}}" wx:for-item="it" bindtap="showDetail" data-detail="{{it}}">{{it.userName?it.userName:''}}</view>
             </view>
 
           </view>

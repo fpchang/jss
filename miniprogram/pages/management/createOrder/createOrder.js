@@ -24,6 +24,8 @@ Page({
     userName: '',
     phone: '',
     wxName: '',
+    downPayment:0,
+    accountSum:0,
     roomSelectList: [],
     orderItem: {}
   },
@@ -157,7 +159,9 @@ Page({
       phone: this.data.phone,
       orderSource: this.data.source,
       orderSouce_Zn: API.orderSource[this.data.source],
-      orderStatus: 0
+      orderStatus: 0,
+      downPayment:this.data.downPayment,
+      accountSum:this.data.accountSum
     }
     DB.insertData("order",item).then(res=>{
       wx.hideLoading();

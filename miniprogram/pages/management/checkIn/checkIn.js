@@ -88,13 +88,10 @@ Page({
         let targetArray = [];
         for (let j = 0; j < tempArray.length; j++) {
           let ob = filArray.find(item => item.checkInStartDateTimeStamp <= tempArray[j] && tempArray[j] <item.checkInEndDateTimeStamp);
-          let dataObj = ob ? {
-            romeId: ob.romeId,
-            userName: ob.userName,
-            phone: ob.phone,
-            orderSouce_Zn: ob.orderSouce_Zn,
+          let dataObj = ob ? Object.assign({ 
+            isBalancePayment:(ob['accountSum']-ob['downPayment'])>0,          
             isContinueCheckIn:(ob.checkInEndDateTimeStamp-ob.checkInStartDateTimeStamp)>1000*60*60*24,//是否连住
-          } : {
+          } ,ob): {
             userName: null
           };
           targetArray.push(dataObj);
@@ -210,5 +207,8 @@ this.getValidOrder();
   },
   onClickLeft() {
     wx.navigateBack();
+  },
+  showDetail(e){
+    console.log(e.target.dataset.detail)
   }
 })
