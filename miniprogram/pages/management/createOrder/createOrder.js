@@ -26,8 +26,10 @@ Page({
     wxName: '',
     downPayment:0,
     accountSum:0,
+    mark:"",
     roomSelectList: [],
     orderItem: {}
+   
   },
   computed: {
     commitButtonDidabled(data) {
@@ -161,7 +163,8 @@ Page({
       orderSouce_Zn: API.orderSource[this.data.source],
       orderStatus: 0,
       downPayment:this.data.downPayment,
-      accountSum:this.data.accountSum
+      accountSum:this.data.accountSum,
+      mark:this.data.mark
     }
     DB.insertData("order",item).then(res=>{
       wx.hideLoading();

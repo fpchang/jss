@@ -34,3 +34,10 @@
 
   </view>
 </view>
+<van-popup show="{{ showPopu }}" bind:close="onClose">
+<view style="width: 500rpx;padding:30rpx">
+  <view>尾款：{{popuJson.balancePayment}} 元</view>
+  <view>{{popuJson.mark}}</view>
+</view>
+ 
+</van-popup>

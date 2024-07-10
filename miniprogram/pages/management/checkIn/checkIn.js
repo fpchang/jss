@@ -11,6 +11,11 @@ Page({
    */
   behaviors: [computedBehavior],
   data: {
+    popuJson:{
+      balancePayment:0,
+      mark:""
+    },
+    showPopu:false,
     roomIdList: ["201", "202", "203", "204", "301", "302", "303"],
     checkInOrderList: [],//[{
     //     createTime: 111,
@@ -210,5 +215,19 @@ this.getValidOrder();
   },
   showDetail(e){
     console.log(e.target.dataset.detail)
+    let ob= e.target.dataset.detail;
+    if(!ob.isBalancePayment){
+      return;
+    }
+    this.setData({
+      showPopu:true,
+      popuJson:{
+     
+      balancePayment:ob['accountSum']-ob['downPayment'],
+      mark:ob.mark
+    }})
+  },
+  onClose() {
+    this.setData({ showPopu: false });
   }
 })
