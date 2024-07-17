@@ -18,6 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log("home",app.globalData)
     this.getRoom();
   
   },
@@ -69,7 +70,7 @@ Page({
    */
   onShareAppMessage() {
   return {
-    imageUrl:"cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/s1.jpg"
+    imageUrl:`${getApp().globalData.imgSrc}/images/barner/s1.jpg`
   }
   },
   computed:{

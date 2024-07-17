@@ -16,22 +16,14 @@
   <van-cell wx:if="{{au_checkOrder}}" size="large" title="订房记录" is-link  link-type="navigateTo"
   url="/pages/management/checkIn/checkIn"/>
   </view>
-  <!-- <view class="qrview">
-    <view style="width: 400rpx;overflow: hidden;">
-      <image style="vertical-align:top;width: 400rpx; height: 400rpx;" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/qrcode/qrcode-pro.png"></image>
-      <van-button color="#07c160" block bind:click="saveQrCode">
-        转发小程序
-      </van-button>
-    </view>
-
-  </view> -->
+  
 </view>
 
 <van-overlay show="{{ showWrapper }}" bind:click="onClickHide">
   <view class="wrapper">
     <view class="block">
       <view class="qr-lable">见山舍</view>
-      <image style="max-width: 500rpx;" mode="aspectFit" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/qrcode/qrcode-pro.png"></image>
+      <image style="max-width: 500rpx;" mode="aspectFit" src="{{cloudImgsrc}}/images/qrcode/qrcode-pro.png"></image>
       <view>
         <van-button color="#07c160" block bind:click="saveQrCode">
         保存到相册

@@ -14,7 +14,7 @@
   <view class="wrapper">
     <view class="block">
       <view class="qr-lable">微信名:jianshanshe</view>
-      <image style="max-width: 500rpx;" mode="aspectFit" src="cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/qrcode/wxskymind.jpg"></image>
+      <image style="max-width: 500rpx;" mode="aspectFit" src="{{cloudImgsrc}}/images/qrcode/wxskymind.jpg"></image>
       <view>
         <van-button color="#07c160" block bind:click="saveQrCode">
         保存到相册

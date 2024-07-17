@@ -13,6 +13,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    cloudImgsrc:getApp().globalData.imgSrc,
     roomTypeList:[]
   },
   created(){

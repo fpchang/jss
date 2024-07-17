@@ -1,4 +1,5 @@
 // pages/home/components/mine/mine.js
+const common_vendor = require("../../../../common/vendor.js");
 import DB from '../../../../api/DB';
 import {CF} from '../../../../utils/CF';
 import customer from '../../../../dataBase/customer';
@@ -16,6 +17,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    cloudImgsrc:getApp().globalData.imgSrc,
     showWrapper:false,
     showMenu:false,
     openid:'',
@@ -58,19 +60,16 @@ Component({
     toLogin:CF.throttle(function(e){
       wx.showLoading();
       let that =this;
-       wx.getUserProfile({
-        desc: '用于完善会员资料', 
+       wx.getUserInfo({
         success: async (res) => {
           console.warn("111",res);
           let userInfo_a=res.userInfo;
-          let openId= await this.getOpenid();
-          
+          let openId= await this.getOpenid();      
           console.log("gr",userInfo_a,openId);
           userInfo_a.openId=openId;
           this.setData({openId:openId});
          //查找数据库
          let userInfo_d= (await that.getUserInfoFromDataBaseByOpenId(openId))['data'][0];
-         console.log("55555",userInfo_a,userInfo_d)
          if(userInfo_d){
            that.setData({userInfo:userInfo_d});
            that.setUserInfoFromStorage(userInfo_d);
@@ -85,7 +84,39 @@ Component({
         }
       })
     },2000),
-    getOpenid() {
+    getOpenid(){
+      return new Promise((resolve,reject)=>{
+        wx.login({
+          success: (res) => {
+            let secret ="845eff40726dc3624688c347dab12bce";
+            console.log("66666666666",res);
+           
+            common_vendor.Vs.callFunction({
+              name:"getOpenId",
+              data:{
+                code:res.code,
+                secret:secret,
+                appId:getApp().globalData.appId
+              }
+            }).then(re=>{
+              resolve(re.result.res.data.openid)
+            }).catch(er=>{
+              reject(er)
+            })
+            // wx.request({
+            //   url:`https://api.weixin.qq.com/sns/jscode2session?appid=${getApp().globalData.appId}&secret=${secret}&js_code=${res.code}&grant_type=authorization_code`,
+            //   success:re=>{              
+            //     resolve(re.data.openid);
+            //   },fail:(error=>{
+            //     reject(error);
+            //   })
+            // })
+          },
+        })
+      })
+     
+    },
+    getOpenidCloud() {
       return new Promise((resolve,reject)=>{
         wx.cloud.callFunction({
           name: 'quickstartFunctions',
@@ -121,15 +152,12 @@ Component({
     },
 
     shareJss() {
-      // return {
-      //   path:"pages/home/home",
-      //   imageUrl:"cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/s1.jpg"
-      // }
+     
       this.triggerEvent('shareJss');
       },saveQrCode:CF.throttle( function (e) {
         wx.showLoading();
          wx.cloud.downloadFile({
-          fileID: 'cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/qrcode/qrcode-pro.png', // 文件 ID
+          fileID: `${thiss.data.cloudImgsrc}/images/qrcode/qrcode-pro.png`, // 文件 ID
           success: res => {
             // 返回临时文件路径
             console.log(res.tempFilePath)

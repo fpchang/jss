@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    cloudImgsrc:getApp().globalData.imgSrc
   },
 
   /**
@@ -65,7 +65,7 @@ Page({
   onShareAppMessage() {
     return {
       path:"pages/home/home",
-      imageUrl:"cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/s1.jpg"
+      imageUrl:`${getApp().globalData.imgSrc}/images/barner/s1.jpg`
     }
   }
 })

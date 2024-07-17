@@ -1,12 +1,14 @@
 // app.js
 import {CF} from './utils/CF';
+import {cloudConfig} from './common/cloudConfig';
 App({
   onLaunch: function () {
-    wx.login({
-      success: (res) => {
-        console.log("aaa",res)
-      },
-    })
+   
+    // wx.login({
+    //   success: (res) => {
+    //     console.log("aaa",res)
+    //   },
+    // })
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力');
     } else {
@@ -22,6 +24,7 @@ App({
 
     this.globalData = {};
     this.initNav();
+    this.initConfig();
     this.initNetWork();
     this.updateVersion();
   },
@@ -42,7 +45,11 @@ App({
       }
     })
   },
-
+initConfig(){
+  const { appId } = wx.getAccountInfoSync().miniProgram;
+  this.globalData.appId=appId;//"wxb0704bf984581410";
+  this.globalData.imgSrc=cloudConfig.imgsrc;
+},
   initNetWork() {
     wx.onNetworkStatusChange(res => {
       console.log("网络监听变化", res)
@@ -81,6 +88,8 @@ App({
     })
   },
   globalData: {
+    appId:"wxb0704bf984581410",
+    imgSrc:cloudConfig.imgsrc,
     navHeight:0,
     navTop:0,
     windowHeight:0

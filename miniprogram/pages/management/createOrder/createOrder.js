@@ -111,28 +111,34 @@ Page({
     //      console.log("查询结果", res);
     //     wx.hideLoading();
     //    })
-   DB.getCollection("order", _.or([
-      //开始日期在区间内
-      {
-        "orderStatus":0,
-        "checkInStartDateTimeStamp": _.lte(this.data.dateRange[0]),
-        "checkInEndDateTimeStamp": _.gt(this.data.dateRange[0])
+    // _.or([
+    //   //开始日期在区间内
+    //   {
+    //     "orderStatus":0,
+    //     "checkInStartDateTimeStamp": _.lte(this.data.dateRange[0]),
+    //     "checkInEndDateTimeStamp": _.gt(this.data.dateRange[0])
 
-      }
-      ,
-      //结束日期在区间内
-      {
-        "orderStatus":0,
-        "checkInStartDateTimeStamp": _.lt(this.data.dateRange[1]),
-        "checkInEndDateTimeStamp": _.gte(this.data.dateRange[1])
-      },
-      //日期区间包含已有订单区间
-      {
-        "orderStatus":0,
-        "checkInStartDateTimeStamp": _.gte(this.data.dateRange[0]),
-        "checkInEndDateTimeStamp": _.lte(this.data.dateRange[1])
-      }
-    ])).then(res => {
+    //   }
+    //   ,
+    //   //结束日期在区间内
+    //   {
+    //     "orderStatus":0,
+    //     "checkInStartDateTimeStamp": _.lt(this.data.dateRange[1]),
+    //     "checkInEndDateTimeStamp": _.gte(this.data.dateRange[1])
+    //   },
+    //   //日期区间包含已有订单区间
+    //   {
+    //     "orderStatus":0,
+    //     "checkInStartDateTimeStamp": _.gte(this.data.dateRange[0]),
+    //     "checkInEndDateTimeStamp": _.lte(this.data.dateRange[1])
+    //   }
+    // ])
+    let hql=`orderStatus==0&&(
+      (checkInStartDateTimeStamp<=${this.data.dateRange[0]}&&checkInEndDateTimeStamp>${this.data.dateRange[0]})||
+      (checkInStartDateTimeStamp<${this.data.dateRange[1]}&&checkInEndDateTimeStamp>=${this.data.dateRange[1]})||
+      (checkInStartDateTimeStamp>=${this.data.dateRange[0]}&&checkInEndDateTimeStamp<=${this.data.dateRange[1]})
+      )`;
+   DB.getCollection("order",hql ).then(res => {
       let ar = res.data.map(item=>item.roomArray).flat();
       ar=(Array.from(new Set(ar))).sort();
       let validarr = this.data.roomIdList.filter(el=>!ar.includes(el));

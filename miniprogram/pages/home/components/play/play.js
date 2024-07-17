@@ -16,15 +16,9 @@ Component({
   },
   
   data: {
+    cloudImgsrc:getApp().globalData.imgSrc,
     playList:[
-      // {
-      //   name:"营火虫基地",
-      //   name_En:"fireworm",
-      //   name_Zn:"营火虫基地",
-      //   distance:50,
-      //   distance_unit:'m',
-      //   image:"cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/play/yinghuochun.jpg"
-      // }
+    
     ]
   },
 

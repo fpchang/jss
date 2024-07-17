@@ -1,3 +1,5 @@
+//import common_vendor from '../common/vendor';
+const common_vendor = require("../common/vendor.js");
 class DB{
   constructor(){}
    getCollection(dbName,w={}){
@@ -6,9 +8,13 @@ class DB{
       if(!dbName){
        reject("dbName is invalid")
       }
-      wx.cloud.database().collection(dbName).where(w).get().then(res=>{
-        console.log(res.data);
-        resolve(res)
+      console.log(dbName);
+      const db = common_vendor.Vs.database();
+     // wx.cloud.database()
+      db.collection(dbName).where(w).get().then(res=>{
+        console.log(res.result);
+        resolve(res.result)
+      }).catch(err=>{
       })
     })
   }
@@ -17,19 +23,18 @@ class DB{
       if(!dbName){
        reject("dbName is invalid")
       }
-      wx.cloud.database().collection(dbName).add({
-        data:r
-      }).then(res=>{
-        resolve(res);
+      const db = common_vendor.Vs.database();
+      db.collection(dbName).add(r).then(res=>{
+        resolve(res.result);
       }).catch(er=>{
+        console.error(er);
         reject(er)
       })
     });
   }
   add(dbName,r={}){
-      return wx.cloud.database().collection(dbName).add({
-        data:r
-      })  
+    const db = common_vendor.Vs.database();
+      return db.collection(dbName).add(r)  
   }
 }
 module.exports = new DB();

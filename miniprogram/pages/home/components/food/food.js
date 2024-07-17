@@ -14,6 +14,7 @@ Component({
    */
   data: {
     roomTypeList:[],
+    cloudImgsrc:getApp().globalData.imgSrc,
     foodList:[
       {name:"kafei",name_Zn:"咖啡",imgs:["foods/kafei.jpg","foods/kafei.jpg","foods/kafei.jpg"]},
       {name:"yinliao",name_Zn:"饮料",imgs:["foods/kele.jpg","foods/xuebi.jpg","foods/kafei.jpg"]}

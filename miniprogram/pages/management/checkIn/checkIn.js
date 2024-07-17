@@ -122,11 +122,12 @@ this.getValidOrder();
     const _ = wx.cloud.database().command;
    DB.getCollection("order",
       //开始日期在区间内
-      {
-        "orderStatus":0,
-        "checkInStartDateTimeStamp": _.gte(new Date().getTime()-1000*60*60*24)
+      // {
+      //   "orderStatus":0,
+      //   "checkInStartDateTimeStamp": _.gte(new Date().getTime()-1000*60*60*24)
 
-      }
+      // }
+      `orderStatus==0&&checkInStartDateTimeStamp>${new Date().getTime()-1000*60*60*24}`
      ).then(res => {
       this.setData({checkInOrderList:res.data});
       wx.hideLoading();

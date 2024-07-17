@@ -10,6 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    cloudImgsrc:getApp().globalData.imgSrc,
     room_id:'',
     roominfo:{},
     roomImgsList:[]
@@ -20,7 +21,7 @@ Page({
    */
   onLoad(options) {
     console.log(9999,options)
-    this.setData({room_id:parseInt(options['room_id'])});
+    this.setData({room_id:options['room_id']});
     this.data.room_id&&this.getRoomImages();
   },
 
@@ -72,21 +73,24 @@ Page({
   onShareAppMessage() {
     return {
       path:"pages/home/home",
-      imageUrl:"cloud://cloud1-7gj1lfpl09ab4ceb.636c-cloud1-7gj1lfpl09ab4ceb-1318104045/images/barner/s1.jpg"
+      imageUrl:`${this.data.cloudImgsrc}/images/barner/s1.jpg`
     }
   },
   navback(){
     wx.navigateBack();
   },
   getRoomImages() {
-    DB.getCollection("roomType", {
-      _id: this.data.room_id
-    }).then(res => {
+    console.log()
+    DB.getCollection("roomType", //`_id=="${this.data.room_id}"`
+     { _id: this.data.room_id}
+    ).then(res => {
       console.log("dddd", res,[res.data[0].imgs.first,...res.data[0].imgs.normal])
       res.data.length&&this.setData({
         roominfo:res.data[0],
         roomImgsList: [res.data[0].imgs.first,...res.data[0].imgs.normal]
       })
+    }).catch(error=>{
+      console.error("roomdetail error",error)
     })
   }
 })
