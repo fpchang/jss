@@ -158,7 +158,8 @@ Component({
     shareJss() {
      
       this.triggerEvent('shareJss');
-      },saveQrCode:CF.throttle( function (e) {
+      },
+      saveQrCode:CF.throttle( function (e) {
         wx.showLoading();
          wx.cloud.downloadFile({
           fileID: `${thiss.data.cloudImgsrc}/images/qrcode/qrcode-pro.png`, // 文件 ID
@@ -187,6 +188,17 @@ Component({
           fail: console.error
         })        
       },3000),
-
+      copyOpenId(){
+       
+        wx.setClipboardData({
+          data: this.data.userInfo.openId,
+          success(res){
+            wx.showToast({
+              title: '复制成功',
+              icon:"success"
+            })
+          }
+        })
+      }
   }
 })
