@@ -15,6 +15,8 @@
   url="/pages/management/createOrder/createOrder"/>
   <van-cell wx:if="{{au_checkOrder}}" size="large" title="订房记录" is-link  link-type="navigateTo"
   url="/pages/management/checkIn/checkIn"/>
+  <van-cell wx:if="{{au_checkOrderShow}}" size="large" title="订房信息" is-link  link-type="navigateTo"
+  url="/pages/management/checkInShowCard/checkInShowCard"/>
   </view>
   
 </view>

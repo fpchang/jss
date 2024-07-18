@@ -37,7 +37,11 @@ Component({
     },
     au_checkOrder(data){  
       return data.authorize['au']&&(data.authorize['au']['checkOrder']['accessAll'] ||data.authorize['au']['checkOrder']['access'].includes(data.userInfo.openId));
+    },
+    au_checkOrderShow(data){  
+      return data.authorize['au']&&(data.authorize['au']['au_checkOrderShow']['accessAll'] ||data.authorize['au']['au_checkOrderShow']['access'].includes(data.userInfo.openId));
     }
+    
   },
   /**
    * 组件的方法列表

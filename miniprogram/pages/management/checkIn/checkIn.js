@@ -127,7 +127,7 @@ this.getValidOrder();
       //   "checkInStartDateTimeStamp": _.gte(new Date().getTime()-1000*60*60*24)
 
       // }
-      `orderStatus==0&&checkInStartDateTimeStamp>${new Date().getTime()-1000*60*60*24}`
+      `orderStatus==0&&(checkInStartDateTimeStamp>${new Date().getTime()-1000*60*60*24}||checkInEndDateTimeStamp>${new Date().getTime()})`
      ).then(res => {
       this.setData({checkInOrderList:res.data});
       wx.hideLoading();

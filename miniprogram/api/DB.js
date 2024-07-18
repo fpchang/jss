@@ -18,6 +18,20 @@ class DB{
       })
     })
   }
+  getCollectionGroupBy(dbName,w={},groupBy="_id asc"){
+    return new Promise((resolve,reject)=>{
+      if(!dbName){
+       reject("dbName is invalid")
+      }
+      console.log(dbName);
+      const db = common_vendor.Vs.database();
+      db.collection(dbName).where(w).orderBy(groupBy).get().then(res=>{
+        console.log(res.result);
+        resolve(res.result)
+      }).catch(err=>{
+      })
+    })
+  }
   insertData(dbName,r={}){
     return new Promise((resolve,reject)=>{
       if(!dbName){

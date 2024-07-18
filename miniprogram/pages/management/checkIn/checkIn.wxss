@@ -4,7 +4,7 @@
   width: 80vw;
   overflow-x: scroll;
   flex-direction: row;
-  font-size: 40rpx;
+  font-size: 30rpx;
 }
 .left-table-style{
   width: 20vw;
@@ -41,7 +41,7 @@
   
 }
 .checkIntable-h-list .checkIntable-h-list-h{
-  width: 40vw;
+  width: 20vw;
   overflow: hidden;
   vertical-align: center;
   justify-content: center;

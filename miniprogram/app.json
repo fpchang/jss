@@ -3,6 +3,7 @@
     
     "pages/home/home",
     "pages/management/checkIn/checkIn",
+    "pages/management/checkInShowCard/checkInShowCard",
     "pages/management/createOrder/createOrder",
     "pages/getOpenId/index",
     "pages/home/romeDetail/romeDetail",

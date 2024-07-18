@@ -1,0 +1,24 @@
+/* pages/management/checkInShowCard/checkInShowCard.wxss */
+.title-style{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-weight: bold;
+  background-color:#bbb;
+}
+.scroll-area{
+  height: calc(100% - 80rpx);
+  background-color: #eee;
+}
+.lowAlert{
+  color: #000;
+  font-weight: bold;
+}
+.midAlert{
+  color: green;
+  font-weight: bold;
+}
+.higAlert{
+  color: red;
+  font-weight: bold;
+}
