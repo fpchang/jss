@@ -217,7 +217,7 @@ this.getValidOrder();
   showDetail(e){
     console.log(e.target.dataset.detail)
     let ob= e.target.dataset.detail;
-    if(!ob.isBalancePayment){
+    if(!ob.isBalancePayment&&!ob.mark){
       return;
     }
     this.setData({

@@ -168,10 +168,11 @@ Page({
       orderSource: this.data.source,
       orderSouce_Zn: API.orderSource[this.data.source],
       orderStatus: 0,
-      downPayment:this.data.downPayment,
-      accountSum:this.data.accountSum,
+      downPayment:Number(this.data.downPayment),
+      accountSum:Number(this.data.accountSum),
       mark:this.data.mark
     }
+    console.log(item)
     DB.insertData("order",item).then(res=>{
       wx.hideLoading();
       Notify({ type: 'success', message: '创建成功' });

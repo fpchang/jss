@@ -13,7 +13,7 @@
         <van-col span="24" wx:for="{{orderListFormat}}" wx:for-item="item">
           <view style="display: flex;flex-direction: column; justify-content: center;align-items: center;margin-top: 30rpx ;padding:30rpx 0 ;background-color: #fff;font-size: 35rpx;">
             <view style="font-weight: bold;">{{item.des}} ~ {{item.dee}} {{item.dy}}</view>
-            <view><text class="midAlert"> {{item.dayx + 1}} </text>天<text class="midAlert"> {{item.dayx}} </text>晚 （{{item.orderSouce_Zn}}）  </view>
+            <view><text class="midAlert"> {{item.dayx}} </text>晚 （{{item.orderSouce_Zn}}）  </view>
             
             <view style="display: flex;">
               <view style="display: flex;align-items: center;padding-right: 30rpx">房间</view>
@@ -23,6 +23,7 @@
              
             </view>
             <view><text class="lowAlert">{{item.userName}}   </text>(欠：<text class="higAlert">{{(item.accountSum - item.downPayment)?(item.accountSum - item.downPayment):0}}元</text>)</view>
+            <view>{{item.mark}}</view>
             <view class="control"></view>
           </view>
         </van-col>
