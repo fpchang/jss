@@ -24,7 +24,9 @@
             </view>
             <view><text class="lowAlert">{{item.userName}}   </text>(欠：<text class="higAlert">{{(item.accountSum - item.downPayment)?(item.accountSum - item.downPayment):0}}元</text>)</view>
             <view>{{item.mark}}</view>
-            <view class="control"></view>
+            <view class="control">
+              <van-icon name="delete-o" data-item="{{item}}"  size="50rpx" bind:tap="deleteOrder" />
+            </view>
           </view>
         </van-col>
        

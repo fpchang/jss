@@ -22,3 +22,10 @@
   color: red;
   font-weight: bold;
 }
+.control{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding:0 30rpx;
+  box-sizing: border-box;
+}

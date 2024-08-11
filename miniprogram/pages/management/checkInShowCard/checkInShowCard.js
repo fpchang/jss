@@ -57,6 +57,28 @@ Page({
       wx.hideLoading();
     })
   },
+  deleteOrder(e){
+    
+    let orderitem =e.currentTarget.dataset.item;
+    console.log(orderitem)
+    wx.showModal({
+      title: '是否取消此订单',
+      content: '取消后不可恢复',
+      success: async (res) => {
+        if (res.cancel) {
+          
+        }
+    
+        if (res.confirm) {
+          console.log("取消")
+         
+        await  DB.update("order",`${orderitem._id}`,{orderStatus:5});
+        console.log("取消成功");
+        this.getValidOrder();
+        }
+      }
+    })
+  },
   onClickLeft(){
     wx.navigateBack();
   }

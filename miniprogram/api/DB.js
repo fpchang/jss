@@ -50,5 +50,10 @@ class DB{
     const db = common_vendor.Vs.database();
       return db.collection(dbName).add(r)  
   }
+  update(dbName,_id="",data={}){
+    const db = common_vendor.Vs.database();
+    console.log(arguments)
+    return db.collection(dbName).doc(_id).update(data);
+  }
 }
 module.exports = new DB();
